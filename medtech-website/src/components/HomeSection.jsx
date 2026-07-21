@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { ArrowDownRight, Stethoscope, Microscope, Award, Image as ImageIcon, Focus, Scan } from 'lucide-react';
+import React from 'react';
+import { ArrowDownRight, Stethoscope, Microscope, Award, Image as ImageIcon, Activity, Scan, Sparkles } from 'lucide-react';
 
 export default function HomeSection({ scrollToSection }) {
-  const [apertureKey, setApertureKey] = useState(0);
-
   const handleScrollTo = (sectionId) => {
     if (scrollToSection) {
       scrollToSection(sectionId);
@@ -12,32 +10,40 @@ export default function HomeSection({ scrollToSection }) {
     }
   };
 
-  const handleRefocus = () => {
-    setApertureKey(prev => prev + 1);
-  };
-
   return (
     <section className="page-section">
-      {/* Hero Header Section - Microscope Focus Reveal (Aperture Lens) */}
-      <div className="hero-aperture-container" key={apertureKey}>
-        {/* Expanding Glowing Aperture Lens Ring Overlay */}
-        <div className="microscope-aperture-ring" aria-hidden="true">
-          <div className="aperture-reticle-crosshair"></div>
+      {/* Hero Header Section - Modern Continuous Diagnostic Microscope HUD */}
+      <div className="hero-diagnostic-container">
+        {/* Continuous Looping Laser Scan Beam */}
+        <div className="diagnostic-scan-beam" aria-hidden="true"></div>
+
+        {/* Ambient Looping Micro-Specimen Particles */}
+        <div className="specimen-particle-field" aria-hidden="true">
+          <div className="specimen-particle p1"></div>
+          <div className="specimen-particle p2"></div>
+          <div className="specimen-particle p3"></div>
+          <div className="specimen-particle p4"></div>
         </div>
 
-        <div className="hero-card hero-aperture-viewport">
+        {/* Corner Reticle HUD Brackets */}
+        <div className="hud-corner top-left"></div>
+        <div className="hud-corner top-right"></div>
+        <div className="hud-corner bottom-left"></div>
+        <div className="hud-corner bottom-right"></div>
+
+        <div className="hero-card hero-ambient-viewport">
           <div className="hero-meta-row">
             <span className="hero-tag">CLASS OF 2026</span>
             <span className="hero-dot">/</span>
             <span className="hero-tag">CLINICAL INTERNSHIP PORTAL</span>
-            <button className="aperture-focus-trigger" onClick={handleRefocus} title="Re-focus Microscope Aperture Lens">
-              <Focus size={12} /> <span>100x OPTICAL FOCUS</span>
-            </button>
+            <span className="live-status-pill">
+              <Activity size={12} className="pulse-icon" /> <span>LIVE DIAGNOSTIC FEED</span>
+            </span>
           </div>
           
           <h1 className="hero-title">
             Precision in Diagnostics, <br />
-            <span className="gold-accent">Excellence in Clinical Duty</span>
+            <span className="gold-shimmer-text">Excellence in Clinical Duty</span>
           </h1>
 
           <p className="hero-subtitle">
