@@ -229,15 +229,16 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* 9 Clinical Laboratory Sections Sticky Horizontal Scroll Pinning */}
-      <div className="section-header section-header-dept" style={{ marginTop: '3.5rem' }}>
-        <span className="section-tag">9 Clinical Rotations</span>
-        <h3 className="section-title dept-section-title">Major Laboratory Sections</h3>
-        <p className="section-subtitle">Keep scrolling down to navigate through all 9 cards horizontally from left to right.</p>
-      </div>
-
+      {/* 9 Clinical Laboratory Sections Lock-Pinning Horizontal Scroll */}
       <div className="horizontal-sticky-wrapper" ref={stickyWrapperRef}>
         <div className="horizontal-sticky-content">
+          {/* Locked Section Header */}
+          <div className="section-header section-header-dept" style={{ marginBottom: '0.75rem' }}>
+            <span className="section-tag">9 Clinical Rotations</span>
+            <h3 className="section-title dept-section-title">Major Laboratory Sections</h3>
+            <p className="section-subtitle">Scroll down — page remains locked in place while cards swipe horizontally</p>
+          </div>
+
           <div 
             className="horizontal-track-container" 
             ref={trackRef}
@@ -267,8 +268,8 @@ export default function AboutSection() {
               />
             </div>
             <div className="horizontal-scroll-hint">
-              <span>SECTION PROGRESS ({Math.min(9, Math.floor(scrollProgress * 9) + 1)} / 09)</span>
-              <span className="scroll-arrow">SCROLL DOWN ↓</span>
+              <span>CARD PROGRESS ({Math.min(9, Math.floor(scrollProgress * 9) + 1)} / 09) — SWIPING HORIZONTALLY</span>
+              <span className="scroll-arrow">{scrollProgress >= 0.95 ? 'CONTINUE SCROLLING DOWN ↓' : 'KEEP SCROLLING DOWN ↓'}</span>
             </div>
           </div>
         </div>
