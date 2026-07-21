@@ -4,75 +4,133 @@ import { Search, Mail, Building2 } from 'lucide-react';
 const internsData = [
   {
     id: 1,
-    name: 'Trisha Julianne A. Espiron',
-    badge: 'Class President',
-    hospitalKey: 'st-jude',
-    hospitalName: 'St. Jude Medical Center',
-    specialty: 'Clinical Microscopy & Hematology',
-    quote: '"Finding answers under the ocular lens to help doctors heal lives."',
-    image: '/assets/interns/trisha_espiron.jpeg',
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com'
+    name: 'Sebastien Aczon, MTI',
+    badge: 'Alpha Intern',
+    gender: 'male',
+    hospitalKey: 'mount-carmel',
+    hospitalName: 'Mount Carmel Diocesan General Hospital',
+    specialty: 'Clinical Laboratory Rotation',
+    quote: '"Pioneering diagnostic precision and compassionate patient care."',
+    image: '/assets/interns/sebastien_aczon.jpg',
+    facebook: 'https://www.facebook.com/share/194zDyMkeu/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/itschennotchan_?igsh=NDFqbGR2aXJxdnFu'
   },
   {
     id: 2,
-    name: 'Vice President, BSMT',
-    badge: 'Chief Intern',
-    hospitalKey: 'city-general',
-    hospitalName: 'City General Hospital',
-    specialty: 'Clinical Chemistry Specialist',
-    quote: '"Accuracy and speed in diagnostic testing save lives every shift."',
-    image: '/assets/interns/vicepresident.jpg',
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com'
+    name: 'Kurt Mattieu Binayug, MTI',
+    badge: 'Alpha Intern',
+    gender: 'male',
+    hospitalKey: 'mount-carmel',
+    hospitalName: 'Mount Carmel Diocesan General Hospital',
+    specialty: 'Clinical Laboratory Rotation',
+    quote: '"Accuracy and dedication in every laboratory analysis."',
+    image: '/assets/interns/kurt_binayug.jpg',
+    facebook: 'https://www.facebook.com/share/1DEEooyVRh/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/_mattieuuu?igsh=MWNweDdmaG1ieWE3Zg=='
   },
   {
     id: 3,
-    name: 'Secretary, BSMT',
-    badge: 'Senior Intern',
-    hospitalKey: 'national-health',
-    hospitalName: 'National Health Institute',
-    specialty: 'Blood Bank & Serology',
-    quote: '"Matching antibodies and ensuring safe blood transfusions for everyone."',
-    image: '/assets/interns/secretary.jpg',
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com'
+    name: 'Francine Cober, MTI',
+    badge: 'Alpha Intern',
+    gender: 'female',
+    hospitalKey: 'mount-carmel',
+    hospitalName: 'Mount Carmel Diocesan General Hospital',
+    specialty: 'Clinical Laboratory Rotation',
+    quote: '"Behind every sample is a patient relying on accurate diagnostic results."',
+    image: '/assets/interns/francine_cober.jpg',
+    facebook: 'https://www.facebook.com/share/1EDVqeDh8M/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/seaur__chin?igsh=MWo4dDR0dzNhd2N3aQ=='
   },
   {
     id: 4,
-    name: 'Assistant Secretary, BSMT',
-    badge: 'Senior Intern',
-    hospitalKey: 'st-jude',
-    hospitalName: 'St. Jude Medical Center',
-    specialty: 'Histopathology & Cytology',
-    quote: '"Tissue analysis and biopsy staining: revealing the cellular story."',
-    image: '/assets/interns/assistant_secretary.jpg',
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com'
+    name: 'Franzine Alec Concordia, MTI',
+    badge: 'Alpha Intern',
+    gender: 'female',
+    hospitalKey: 'mount-carmel',
+    hospitalName: 'Mount Carmel Diocesan General Hospital',
+    specialty: 'Clinical Laboratory Rotation',
+    quote: '"Committed to excellence, integrity, and ethical clinical practice."',
+    image: '/assets/interns/franzine_concordia.jpg',
+    facebook: 'https://www.facebook.com/share/198qvjX9fq/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/lecaachin?igsh=ZTBkczRtNGdrcjBk'
   },
   {
     id: 5,
-    name: 'Treasurer, BSMT',
-    badge: 'Senior Intern',
-    hospitalKey: 'mary-mediatrix',
-    hospitalName: 'Mary Mediatrix Medical Center',
-    specialty: 'Clinical Hematology',
-    quote: '"Dedicated to precision blood count analysis and diagnostic clarity."',
-    image: '/assets/interns/treasurer.jpg',
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com'
+    name: 'Trisha Julieann Espiron, MTI',
+    badge: 'Alpha Intern',
+    gender: 'female',
+    hospitalKey: 'mount-carmel',
+    hospitalName: 'Mount Carmel Diocesan General Hospital',
+    specialty: 'Clinical Laboratory Rotation',
+    quote: '"Leading with resilience, precision, and passion for healthcare."',
+    image: '/assets/interns/trisha_espiron.jpeg',
+    facebook: 'https://www.facebook.com/share/1D1FJDTvL6/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/trishaespiron_?igsh=MXIwOGs4aTQ3MXQxbg=='
   },
   {
     id: 6,
-    name: 'Auditor, BSMT',
-    badge: 'Senior Intern',
-    hospitalKey: 'city-general',
-    hospitalName: 'City General Hospital',
-    specialty: 'Immunohematology',
-    quote: '"Every specimen represents a patient expecting our absolute best work."',
-    image: '/assets/interns/auditor.jpg',
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com'
+    name: 'Nishamei Hally Monsod, MTI',
+    badge: 'Alpha Intern',
+    gender: 'female',
+    hospitalKey: 'mount-carmel',
+    hospitalName: 'Mount Carmel Diocesan General Hospital',
+    specialty: 'Clinical Laboratory Rotation',
+    quote: '"Rigorous attention to detail in every diagnostic specimen run."',
+    image: '/assets/interns/nishamei_monsod.jpg',
+    facebook: 'https://www.facebook.com/share/17uAHrbDD2/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/halmeiia?igsh=bW5wZHlwNmZqam0w'
+  },
+  {
+    id: 7,
+    name: 'Alejandro Pacano Jr., MTI',
+    badge: 'Alpha Intern',
+    gender: 'male',
+    hospitalKey: 'mount-carmel',
+    hospitalName: 'Mount Carmel Diocesan General Hospital',
+    specialty: 'Clinical Laboratory Rotation',
+    quote: '"Serving patients through microscopic accuracy and teamwork."',
+    image: '/assets/interns/alejandro_pacano.jpg',
+    facebook: 'https://www.facebook.com/share/1ArvNXojLn/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/alixxnfr?igsh=eWQ1dTVoYzhqM3Fz'
+  },
+  {
+    id: 8,
+    name: 'Jasmin Mari Quilantang, MTI',
+    badge: 'Alpha Intern',
+    gender: 'female',
+    hospitalKey: 'mount-carmel',
+    hospitalName: 'Mount Carmel Diocesan General Hospital',
+    specialty: 'Clinical Laboratory Rotation',
+    quote: '"Excellence in diagnostic science and compassionate clinical care."',
+    image: '/assets/interns/jasmin_quilantang.jpg',
+    facebook: 'https://www.facebook.com/share/161rWirTop2/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/sushij4zz?igsh=Y2Z1NG9ieXA2a29z'
+  },
+  {
+    id: 9,
+    name: 'Alexis Janell Umali, MTI',
+    badge: 'Alpha Intern',
+    gender: 'female',
+    hospitalKey: 'mount-carmel',
+    hospitalName: 'Mount Carmel Diocesan General Hospital',
+    specialty: 'Clinical Laboratory Rotation',
+    quote: '"Paving the way for clinical innovation and diagnostic mastery."',
+    image: '/assets/interns/alexis_umali.jpg',
+    facebook: 'https://www.facebook.com/share/1LDy2Y5yWu/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/ae_jie1?igsh=MTgzYWR3b3ZzbmR0OA=='
+  },
+  {
+    id: 10,
+    name: 'Kurt Jurei Vesliños, MTI',
+    badge: 'Alpha Intern',
+    gender: 'male',
+    hospitalKey: 'mount-carmel',
+    hospitalName: 'Mount Carmel Diocesan General Hospital',
+    specialty: 'Clinical Laboratory Rotation',
+    quote: '"Upholding ethical standards and diagnostic precision every shift."',
+    image: '/assets/interns/kurt_veslinos.jpg',
+    facebook: 'https://www.facebook.com/share/1JJ2EWZvm1/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/thekurtjrei?igsh=MWlmMXJ4ejN6MW94Mg=='
   }
 ];
 
@@ -81,7 +139,10 @@ export default function InternsSection() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredInterns = internsData.filter((intern) => {
-    const matchesFilter = activeFilter === 'all' || intern.hospitalKey === activeFilter;
+    const matchesFilter = 
+      activeFilter === 'all' || 
+      intern.hospitalKey === activeFilter ||
+      intern.gender === activeFilter;
     const matchesSearch =
       searchQuery === '' ||
       intern.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -93,10 +154,10 @@ export default function InternsSection() {
   return (
     <section className="page-section">
       <div className="section-header">
-        <span className="section-tag">Clinical Roster</span>
-        <h2 className="section-title">BATCH NU-LIPA ALPHA Intern Roster</h2>
+        <span className="section-tag">Official Roster</span>
+        <h2 className="section-title">NU–Lipa Alpha Interns Roster</h2>
         <p className="section-subtitle">
-          Meet the dedicated senior Medical Technology clinical interns of Batch Alpha fulfilling rotations across partner medical centers.
+          Meet the 10 pioneering Medical Technology clinical interns of Batch NU-LIPA Alpha at Mount Carmel Diocesan General Hospital.
         </p>
       </div>
 
@@ -107,31 +168,25 @@ export default function InternsSection() {
             className={`filter-chip ${activeFilter === 'all' ? 'active' : ''}`}
             onClick={() => setActiveFilter('all')}
           >
-            All Hospitals
+            All 10 Interns
           </button>
           <button 
-            className={`filter-chip ${activeFilter === 'st-jude' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('st-jude')}
+            className={`filter-chip ${activeFilter === 'mount-carmel' ? 'active' : ''}`}
+            onClick={() => setActiveFilter('mount-carmel')}
           >
-            St. Jude Medical Center
+            Mount Carmel Hospital
           </button>
           <button 
-            className={`filter-chip ${activeFilter === 'city-general' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('city-general')}
+            className={`filter-chip ${activeFilter === 'female' ? 'active' : ''}`}
+            onClick={() => setActiveFilter('female')}
           >
-            City General Hospital
+            Women Interns (6)
           </button>
           <button 
-            className={`filter-chip ${activeFilter === 'national-health' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('national-health')}
+            className={`filter-chip ${activeFilter === 'male' ? 'active' : ''}`}
+            onClick={() => setActiveFilter('male')}
           >
-            National Health Institute
-          </button>
-          <button 
-            className={`filter-chip ${activeFilter === 'mary-mediatrix' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('mary-mediatrix')}
-          >
-            Mary Mediatrix Medical Center
+            Men Interns (4)
           </button>
         </div>
 
