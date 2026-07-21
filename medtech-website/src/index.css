@@ -1343,6 +1343,19 @@ body::after {
 /* ==========================================
    DEVICE RESPONSIVE BREAKPOINTS
    ========================================== */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .dept-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .interns-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
   .carousel-slide {
     grid-template-columns: 1fr;
@@ -1362,6 +1375,41 @@ body::after {
   .lightbox-nav-btn.next { right: 0.5rem; }
 }
 
+@media (max-width: 768px) {
+  .hero-card {
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  .dept-grid {
+    grid-template-columns: 1fr;
+  }
+  .interns-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cover-stats-mini {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: 640px) {
   .header-container {
     flex-direction: column;
@@ -1374,10 +1422,12 @@ body::after {
   .nav-buttons-wrapper {
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
+    gap: 0.4rem;
   }
   .nav-btn {
-    padding: 0.5rem 0.9rem;
-    font-size: 0.82rem;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
   }
   .hero-card {
     padding: 1.75rem 1rem;
@@ -1385,10 +1435,16 @@ body::after {
   .cover-info-bar {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
   }
   .interns-filter-bar {
     flex-direction: column;
     align-items: stretch;
+  }
+  .filter-tags {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
   }
   .search-box {
     max-width: 100%;
@@ -1403,6 +1459,32 @@ body::after {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  .hero-meta-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .marquee-section-wrapper {
+    padding: 2.25rem 0;
+    margin: 2rem 0;
+  }
+  .marquee-word {
+    font-size: clamp(1.5rem, 6.5vw, 2.6rem);
+    padding: 0 0.6rem;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
   }
 }
 
