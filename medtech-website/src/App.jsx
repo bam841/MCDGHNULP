@@ -43,26 +43,28 @@ export default function App() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
       <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
       
-      <main className="container" style={{ flexGrow: 1 }}>
-        <div id="home">
+      <main style={{ flexGrow: 1, width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
+        <div id="home" className="container">
           <HomeSection scrollToSection={scrollToSection} />
         </div>
 
-        {/* Sleek Infinite Scrolling Core Values Marquee Carousel */}
-        <TextMarqueeSection />
+        {/* Sleek Full-Width Infinite Scrolling Core Values Marquee Carousel */}
+        <div style={{ width: '100%', overflow: 'hidden' }}>
+          <TextMarqueeSection />
+        </div>
 
-        <div id="about">
+        <div id="about" className="container">
           <AboutSection />
         </div>
 
-        <div id="interns">
+        <div id="interns" className="container">
           <InternsSection />
         </div>
 
-        <div id="gallery">
+        <div id="gallery" className="container">
           <GallerySection />
         </div>
       </main>
