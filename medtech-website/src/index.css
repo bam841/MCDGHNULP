@@ -512,63 +512,60 @@ body::after {
    ========================================== */
 .roaming-spotlight-beam {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: var(--radius-lg);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
   pointer-events: none;
   z-index: 1;
   background: radial-gradient(
-    650px circle at var(--spotlight-x, 30%) var(--spotlight-y, 30%), 
-    rgba(255, 215, 0, 0.22) 0%, 
-    rgba(14, 165, 233, 0.1) 40%, 
-    transparent 75%
+    circle 380px at center, 
+    rgba(255, 215, 0, 0.32) 0%, 
+    rgba(14, 165, 233, 0.16) 45%, 
+    transparent 70%
   );
-  animation: roamingSpotlightScan 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  transition: opacity 0.4s ease;
+  animation: roamingSpotlightMove 8s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .card-team .roaming-spotlight-beam {
   background: radial-gradient(
-    650px circle at var(--spotlight-x, 70%) var(--spotlight-y, 40%), 
-    rgba(14, 165, 233, 0.25) 0%, 
-    rgba(255, 215, 0, 0.12) 40%, 
-    transparent 75%
+    circle 400px at center, 
+    rgba(14, 165, 233, 0.35) 0%, 
+    rgba(255, 215, 0, 0.15) 45%, 
+    transparent 70%
   );
-  animation-delay: -4.5s;
+  animation-duration: 10s;
+  animation-delay: -3s;
 }
 
 .card-legacy .roaming-spotlight-beam {
   background: radial-gradient(
-    650px circle at var(--spotlight-x, 40%) var(--spotlight-y, 70%), 
-    rgba(245, 158, 11, 0.25) 0%, 
-    rgba(14, 165, 233, 0.1) 40%, 
-    transparent 75%
+    circle 380px at center, 
+    rgba(245, 158, 11, 0.32) 0%, 
+    rgba(14, 165, 233, 0.14) 45%, 
+    transparent 70%
   );
-  animation-delay: -9s;
+  animation-duration: 12s;
+  animation-delay: -6s;
 }
 
-@keyframes roamingSpotlightScan {
+@keyframes roamingSpotlightMove {
   0% {
-    --spotlight-x: 15%;
-    --spotlight-y: 20%;
+    transform: translate3d(-25%, -25%, 0) scale(0.95);
   }
   25% {
-    --spotlight-x: 82%;
-    --spotlight-y: 35%;
+    transform: translate3d(20%, -15%, 0) scale(1.15);
   }
   50% {
-    --spotlight-x: 75%;
-    --spotlight-y: 85%;
+    transform: translate3d(25%, 20%, 0) scale(1);
   }
   75% {
-    --spotlight-x: 20%;
-    --spotlight-y: 70%;
+    transform: translate3d(-15%, 25%, 0) scale(1.2);
   }
   100% {
-    --spotlight-x: 15%;
-    --spotlight-y: 20%;
+    transform: translate3d(-25%, -25%, 0) scale(0.95);
   }
 }
 
