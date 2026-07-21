@@ -115,6 +115,7 @@ const labSectionsData = [
 export default function AboutSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [visibleCardIds, setVisibleCardIds] = useState(new Set());
 
   useEffect(() => {
     if (isPaused) return;
@@ -123,6 +124,27 @@ export default function AboutSection() {
     }, 5500);
     return () => clearInterval(timer);
   }, [isPaused]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const cardId = Number(entry.target.getAttribute('data-card-id'));
+            if (cardId) {
+              setVisibleCardIds((prev) => new Set(prev).add(cardId));
+            }
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+    );
+
+    const cardElements = document.querySelectorAll('.dept-card[data-card-id]');
+    cardElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + carouselData.length) % carouselData.length);
@@ -199,10 +221,18 @@ export default function AboutSection() {
       </div>
 
       <div className="dept-grid">
-        {labSectionsData.map((sec) => {
+        {labSectionsData.map((sec, index) => {
           const IconComp = sec.icon;
+          const isVisible = visibleCardIds.has(sec.id);
           return (
-            <div className="dept-card" key={sec.id}>
+            <div 
+              className={`dept-card ${isVisible ? 'card-revealed' : 'card-hidden'}`} 
+              key={sec.id}
+              data-card-id={sec.id}
+              style={{
+                transitionDelay: `${(index % 3) * 110}ms`
+              }}
+            >
               <div className="dept-icon">
                 <IconComp size={24} color="#ffd700" />
               </div>
