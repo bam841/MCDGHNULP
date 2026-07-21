@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Droplet, TestTube, Dna, Syringe, Eye, Bug, Microscope, ShieldCheck, Binary } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Droplet, TestTube, Dna, Syringe, Eye, Bug, Microscope, ShieldCheck, Binary, Award, Users, HeartPulse, Building2, Sparkles, GraduationCap, Compass } from 'lucide-react';
 
 const carouselData = [
   {
@@ -143,7 +143,6 @@ export default function AboutSection() {
 
     updateWrapperHeight();
     window.addEventListener('resize', updateWrapperHeight);
-    // Extra timeout after render to measure track scrollWidth accurately
     const timer = setTimeout(updateWrapperHeight, 300);
 
     return () => {
@@ -197,7 +196,77 @@ export default function AboutSection() {
 
   return (
     <section className="page-section">
+      {/* SECTION HEADER & ABOUT NARRATIVE */}
       <div className="section-header">
+        <span className="section-tag">Pioneering Batch Story</span>
+        <h2 className="section-title">About NU–Lipa Alpha Interns</h2>
+        <p className="section-subtitle">
+          Paving the way as the inaugural clinical laboratory internship class at Mount Carmel Diocesan General Hospital.
+        </p>
+      </div>
+
+      {/* ANIMATED NARRATIVE STORY SHOWCASE */}
+      <div className="narrative-story-container">
+        {/* Story Card 1: The Pioneering Legacy */}
+        <div className="narrative-card card-pioneer">
+          <div className="narrative-card-glow" aria-hidden="true"></div>
+          <div className="narrative-header-row">
+            <div className="narrative-icon-badge">
+              <Building2 size={22} className="pulse-story-icon" />
+            </div>
+            <span className="narrative-badge-tag">PIONEERING INTERNSHIP CLASS</span>
+          </div>
+          <p className="narrative-paragraph">
+            We are the <strong className="gold-sparkle-text">NU–Lipa Alpha Interns</strong>, the pioneering group of interns from <strong>National University–Lipa</strong> assigned to <strong className="gold-sparkle-text">Mount Carmel Diocesan General Hospital</strong>. As the first batch from our institution to complete our internship at this hospital, we proudly carry the title <span className="title-quote-badge">"Alpha Interns,"</span> symbolizing leadership, resilience, and the beginning of a meaningful partnership between our school and the institution.
+          </p>
+        </div>
+
+        {/* Story Card 2: Team Composition & Unity */}
+        <div className="narrative-card card-team">
+          <div className="narrative-card-glow" aria-hidden="true"></div>
+          <div className="narrative-header-row">
+            <div className="narrative-icon-badge cyan-badge">
+              <Users size={22} className="pulse-story-icon" />
+            </div>
+            <span className="narrative-badge-tag cyan-tag">10 DEDICATED CLINICAL INTERNS</span>
+          </div>
+          
+          <div className="team-metrics-grid">
+            <div className="team-metric-pill">
+              <span className="metric-num">10</span>
+              <span className="metric-label">Total Interns</span>
+            </div>
+            <div className="team-metric-pill">
+              <span className="metric-num female">6</span>
+              <span className="metric-label">Women Leaders</span>
+            </div>
+            <div className="team-metric-pill">
+              <span className="metric-num male">4</span>
+              <span className="metric-label">Men Leaders</span>
+            </div>
+          </div>
+
+          <p className="narrative-paragraph">
+            Our team is composed of <strong>10 dedicated interns</strong>—<strong>6 women and 4 men</strong>—who bring diverse strengths, perspectives, and talents to patient care and clinical practice. Despite our different backgrounds and personalities, we are united by a shared commitment to learning, collaboration, and compassionate healthcare. Through teamwork, dedication, and professionalism, we strive to grow into competent and ethical healthcare professionals.
+          </p>
+        </div>
+
+        {/* Story Card 3: Legacy of Excellence */}
+        <div className="narrative-card card-legacy">
+          <div className="narrative-card-glow" aria-hidden="true"></div>
+          <div className="narrative-header-row">
+            <div className="narrative-icon-badge amber-badge">
+              <Compass size={22} className="pulse-story-icon" />
+            </div>
+            <span className="narrative-badge-tag amber-tag">PAVING THE WAY</span>
+          </div>
+          <p className="narrative-paragraph">
+            As the first NU–Lipa interns to train at <strong className="gold-sparkle-text">Mount Carmel Diocesan General Hospital</strong>, we are honored to pave the way for future batches. We aspire to leave a lasting legacy of <strong className="gold-sparkle-text">excellence, integrity, and service</strong> while making a positive impact on the patients, hospital staff, and communities we serve.
+          </p>
+        </div>
+      </div>
+
+      <div className="section-header" style={{ marginTop: '4rem' }}>
         <span className="section-tag">Clinical Experiences</span>
         <h2 className="section-title">Life On Duty — BATCH NU-LIPA ALPHA</h2>
         <p className="section-subtitle">
