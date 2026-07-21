@@ -380,8 +380,8 @@ body::after {
 .cover-image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 2468 / 1770;
-  max-height: clamp(140px, 50vw, 850px);
+  aspect-ratio: 16 / 9;
+  height: auto;
   overflow: hidden;
   background: var(--navy-darkest);
 }
@@ -564,10 +564,11 @@ body::after {
 
 .slide-image-box {
   position: relative;
-  height: 100%;
-  min-height: 140px;
-  max-height: 380px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  height: auto;
   overflow: hidden;
+  border-radius: var(--radius-md);
 }
 
 .slide-image-box img {
@@ -837,7 +838,9 @@ body::after {
 
 .intern-card-header {
   position: relative;
-  height: 220px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
   overflow: hidden;
 }
 
@@ -1832,23 +1835,26 @@ section[id] {
   }
 
   .cover-image-wrapper {
-    height: 130px !important;
-    max-height: 130px !important;
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    max-height: none !important;
   }
 
   .slide-image-box {
-    min-height: 120px !important;
-    height: 120px !important;
-    max-height: 120px !important;
+    aspect-ratio: 16 / 10 !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
   }
 
   .intern-card-header {
-    height: 110px !important;
+    aspect-ratio: 4 / 3 !important;
+    height: auto !important;
   }
 
   .gallery-image-wrapper {
-    height: 130px !important;
-    max-height: 130px !important;
+    aspect-ratio: 16 / 10 !important;
+    height: auto !important;
   }
 
   .gallery-grid-item {
