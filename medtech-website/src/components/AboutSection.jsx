@@ -8,7 +8,7 @@ const carouselData = [
     title: 'High-Power Microscopic Analysis',
     description: 'Batch Alpha interns perform oil-immersion differential white blood cell counts, identifying abnormal cell morphologies and diagnostic parameters under precision microscopes.',
     quote: '"Behind every slide is a real patient waiting for an accurate diagnostic answer."',
-    image: '/assets/gallery/1.JPG'
+    image: '/assets/gallery/1c.jpg'
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const carouselData = [
     title: 'Complete Blood Count Calibration',
     description: 'Hands-on experience with modern flow-cytometry automated analyzers, running daily quality control samples, and verifying blood cell parameters before releasing hospital results.',
     quote: '"Quality control is the heartbeat of precise medical laboratory diagnostics."',
-    image: '/assets/gallery/3.JPG'
+    image: '/assets/gallery/2c.jpg'
   },
   {
     id: 3,
@@ -24,7 +24,79 @@ const carouselData = [
     title: 'ABO/Rh Blood Typing & Crossmatching',
     description: 'Critical clinical duty hours spent verifying donor blood compatibility, checking anti-globulin reactions, and safeguarding emergency blood transfusions for patients.',
     quote: '"Safe blood transfusions save lives — zero error margin allowed."',
-    image: '/assets/interns/president.jpg'
+    image: '/assets/gallery/4c.jpg'
+  },
+  {
+    id: 4,
+    badge: 'Hospital Internship Orientation',
+    title: 'Clinical Rotation Orientation Day',
+    description: 'Batch Alpha interns undergoing hospital policy orientation, infection control protocol training, and clinical laboratory safety guidelines.',
+    quote: '"Preparation and discipline form the foundation of clinical excellence."',
+    image: '/assets/gallery/6c.jpg'
+  },
+  {
+    id: 5,
+    badge: 'Diagnostic Hematology Smears',
+    title: 'Oil-Immersion Cellular Morphology',
+    description: 'Detailed evaluation of peripheral blood smears, erythrocyte indices, thrombocyte estimation, and pathologic leukocyte classification.',
+    quote: '"Precision vision under 100x magnification."',
+    image: '/assets/gallery/7c.jpg'
+  },
+  {
+    id: 6,
+    badge: 'Duty Milestone Celebration',
+    title: 'Senior Clinical Intern Milestones',
+    description: 'Commemorating successful completion of major clinical laboratory rotation blocks and hospital duty shifts.',
+    quote: '"Every shift completed brings us closer to becoming registered Medical Technologists."',
+    image: '/assets/gallery/10c.jpg'
+  },
+  {
+    id: 7,
+    badge: 'Batch Alpha Showcase',
+    title: 'Official Internship Class Highlight',
+    description: 'Featured gallery showcase of National University Lipa senior MedTech interns in full clinical duty uniform.',
+    quote: '"United in purpose, dedicated to clinical precision."',
+    image: '/assets/gallery/11c.jpg'
+  },
+  {
+    id: 8,
+    badge: 'Clinical Duty Rotation',
+    title: 'Hospital Laboratory Operations',
+    description: 'Senior interns participating in routine morning specimen processing, centrifuging blood tubes, and preparing analyzer racks.',
+    quote: '"Accuracy in pre-analytical specimen preparation guarantees accurate diagnostic results."',
+    image: '/assets/gallery/12c.jpg'
+  },
+  {
+    id: 9,
+    badge: 'Clinical Leadership',
+    title: 'Class President Duty Rotation',
+    description: 'Class President fulfilling hospital duty rotation in clinical microscopy and automated chemistry sections.',
+    quote: '"Leading by example on the hospital laboratory floor."',
+    image: '/assets/gallery/13c.jpg'
+  },
+  {
+    id: 10,
+    badge: 'Clinical Laboratory Operations',
+    title: 'Secretary Duty Rotation',
+    description: 'Class Secretary engaged in clinical serology and diagnostic assay validation.',
+    quote: '"Rigorous attention to detail in every diagnostic run."',
+    image: '/assets/gallery/15c.jpg'
+  },
+  {
+    id: 11,
+    badge: 'Hospital Rotation Duties',
+    title: 'Assistant Secretary Rotation',
+    description: 'Fulfilling histopathology specimen staining and slide mounting procedures.',
+    quote: '"Cellular diagnosis requires patience and meticulous staining techniques."',
+    image: '/assets/gallery/16c.jpg'
+  },
+  {
+    id: 12,
+    badge: 'Clinical Diagnostics',
+    title: 'Treasurer Clinical Duty',
+    description: 'Treasurer performing clinical chemistry spectrophotometric analysis and calibration.',
+    quote: '"Delivering reliable results for patient health management."',
+    image: '/assets/gallery/17c.jpg'
   }
 ];
 

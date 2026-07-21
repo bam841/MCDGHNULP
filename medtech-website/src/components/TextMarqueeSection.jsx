@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Sparkles } from 'lucide-react';
 
 const WORDS = [
   'Integrity',
@@ -29,7 +28,6 @@ export default function TextMarqueeSection() {
       const delta = currentScrollY - lastScrollYRef.current;
       lastScrollYRef.current = currentScrollY;
 
-      // Add scroll velocity impulse (positive when scrolling down, negative when scrolling up)
       scrollVelocityRef.current += delta * 0.15;
     };
 
@@ -38,10 +36,8 @@ export default function TextMarqueeSection() {
     const baseSpeed = 1.2;
 
     const animate = () => {
-      // Friction decay towards 0
       scrollVelocityRef.current *= 0.92;
 
-      // Calculate combined speed
       const speed = isHoveredRef.current 
         ? 0.3 
         : baseSpeed + scrollVelocityRef.current;
@@ -87,14 +83,15 @@ export default function TextMarqueeSection() {
     };
   }, []);
 
-  // Repeat 4 sets to ensure wide track for infinite loop
   const row1Items = [...WORDS, ...WORDS, ...WORDS, ...WORDS];
   const row2Items = [...WORDS, ...WORDS, ...WORDS, ...WORDS];
 
   return (
     <section className="marquee-section-wrapper" aria-label="Core Values Marquee">
-      <div className="marquee-badge-label">
-        <Sparkles size={14} /> OUR GUIDING CORE VALUES
+      <div className="marquee-header-label">
+        <span className="label-line"></span>
+        <span className="label-text">CORE VALUES / BATCH NU-LIPA ALPHA</span>
+        <span className="label-line"></span>
       </div>
       
       {/* Row 1: Forward Loop */}
@@ -111,7 +108,7 @@ export default function TextMarqueeSection() {
                 <span className={`marquee-word ${isOutline ? 'word-outline' : 'word-solid'}`}>
                   {word}
                 </span>
-                <span className="marquee-divider">✦</span>
+                <span className="marquee-divider font-slash">/</span>
               </React.Fragment>
             );
           })}
