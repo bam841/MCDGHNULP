@@ -1,8 +1,11 @@
-import React from 'react';
-import { Microscope, Home, Info, Users, Images } from 'lucide-react';
+import React, { useState } from 'react';
+import { Microscope, Home, Info, Users, Images, Menu, X } from 'lucide-react';
 
 export default function Navbar({ activeSection, scrollToSection }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const handleNavClick = (sectionId) => {
+    setMobileMenuOpen(false);
     if (scrollToSection) {
       scrollToSection(sectionId);
     } else {
@@ -19,7 +22,7 @@ export default function Navbar({ activeSection, scrollToSection }) {
         {/* Brand Logo & Title */}
         <div className="brand-logo" onClick={() => handleNavClick('home')}>
           <div className="brand-icon">
-            <Microscope size={26} color="#050b14" strokeWidth={2.5} />
+            <Microscope size={24} color="#050b14" strokeWidth={2.5} />
           </div>
           <div className="brand-text">
             <h1>BATCH NU-LIPA ALPHA</h1>
@@ -27,8 +30,21 @@ export default function Navbar({ activeSection, scrollToSection }) {
           </div>
         </div>
 
-        {/* Top Navigation Buttons (Home, About Us, Interns, Gallery) */}
-        <nav className="nav-buttons-wrapper" aria-label="Main Navigation">
+        {/* Mobile Hamburger Button */}
+        <button 
+          className="mobile-menu-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+          aria-expanded={mobileMenuOpen}
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* Navigation Menu (Desktop Inline / Mobile Collapsible Drawer) */}
+        <nav 
+          className={`nav-buttons-wrapper ${mobileMenuOpen ? 'mobile-open' : ''}`} 
+          aria-label="Main Navigation"
+        >
           <button 
             className={`nav-btn ${activeSection === 'home' ? 'active' : ''}`}
             onClick={() => handleNavClick('home')}
@@ -65,4 +81,3 @@ export default function Navbar({ activeSection, scrollToSection }) {
     </header>
   );
 }
-
