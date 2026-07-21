@@ -691,7 +691,7 @@ body::after {
    ========================================== */
 .horizontal-sticky-wrapper {
   position: relative;
-  height: 360vh;
+  height: 480vh;
   margin-top: 1rem;
 }
 
@@ -1818,7 +1818,7 @@ section[id] {
   }
 
   .horizontal-sticky-wrapper {
-    height: 380vh !important;
+    height: 520vh !important;
   }
 
   .horizontal-sticky-content {

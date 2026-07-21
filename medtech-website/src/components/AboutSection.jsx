@@ -119,6 +119,7 @@ export default function AboutSection() {
   const stickyWrapperRef = useRef(null);
   const trackRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [wrapperHeightPx, setWrapperHeightPx] = useState(null);
 
   useEffect(() => {
     if (isPaused) return;
@@ -127,6 +128,29 @@ export default function AboutSection() {
     }, 5500);
     return () => clearInterval(timer);
   }, [isPaused]);
+
+  useEffect(() => {
+    const updateWrapperHeight = () => {
+      if (trackRef.current) {
+        const trackWidth = trackRef.current.scrollWidth;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const maxTranslate = Math.max(0, trackWidth - windowWidth + 120);
+        const calculatedHeight = Math.max(windowHeight * 3, windowHeight + maxTranslate + 250);
+        setWrapperHeightPx(calculatedHeight);
+      }
+    };
+
+    updateWrapperHeight();
+    window.addEventListener('resize', updateWrapperHeight);
+    // Extra timeout after render to measure track scrollWidth accurately
+    const timer = setTimeout(updateWrapperHeight, 300);
+
+    return () => {
+      window.removeEventListener('resize', updateWrapperHeight);
+      clearTimeout(timer);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -163,7 +187,7 @@ export default function AboutSection() {
     if (!trackRef.current) return {};
     const trackWidth = trackRef.current.scrollWidth;
     const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 1000;
-    const maxTranslate = Math.max(0, trackWidth - windowWidth + 60);
+    const maxTranslate = Math.max(0, trackWidth - windowWidth + 80);
     const translateX = -scrollProgress * maxTranslate;
     return {
       transform: `translate3d(${translateX}px, 0, 0)`,
@@ -230,7 +254,11 @@ export default function AboutSection() {
       </div>
 
       {/* 9 Clinical Laboratory Sections Lock-Pinning Horizontal Scroll */}
-      <div className="horizontal-sticky-wrapper" ref={stickyWrapperRef}>
+      <div 
+        className="horizontal-sticky-wrapper" 
+        ref={stickyWrapperRef}
+        style={{ height: wrapperHeightPx ? `${wrapperHeightPx}px` : undefined }}
+      >
         <div className="horizontal-sticky-content">
           {/* Locked Section Header */}
           <div className="section-header section-header-dept" style={{ marginBottom: '0.75rem' }}>
