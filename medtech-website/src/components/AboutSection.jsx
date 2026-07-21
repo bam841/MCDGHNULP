@@ -348,53 +348,36 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* 9 Clinical Laboratory Sections Lock-Pinning Horizontal Scroll */}
-      <div 
-        className="horizontal-sticky-wrapper" 
-        ref={stickyWrapperRef}
-        style={{ height: wrapperHeightPx ? `${wrapperHeightPx}px` : undefined }}
-      >
-        <div className="horizontal-sticky-content">
-          {/* Locked Section Header */}
-          <div className="section-header section-header-dept" style={{ marginBottom: '0.75rem' }}>
-            <span className="section-tag">9 Clinical Rotations</span>
-            <h3 className="section-title dept-section-title">Major Laboratory Sections</h3>
-            <p className="section-subtitle">Scroll down — page remains locked in place while cards swipe horizontally</p>
-          </div>
+      {/* 9 Clinical Laboratory Rotations Showcase Section */}
+      <div id="rotations" className="rotations-showcase-wrapper" style={{ marginTop: '4rem' }}>
+        <div className="section-header">
+          <span className="section-tag">9 Clinical Rotations</span>
+          <h2 className="section-title">Major Laboratory Rotations</h2>
+          <p className="section-subtitle">
+            Comprehensive clinical training across 9 specialized laboratory divisions at <strong>Mount Carmel Diocesan General Hospital</strong>.
+          </p>
+        </div>
 
-          <div 
-            className="horizontal-track-container" 
-            ref={trackRef}
-            style={getTransformStyle()}
-          >
-            {labSectionsData.map((sec) => {
-              const IconComp = sec.icon;
-              return (
-                <div className="horizontal-dept-card" key={sec.id}>
-                  <div className="dept-card-badge">SECTION 0{sec.id} / 09</div>
-                  <div className="dept-icon">
-                    <IconComp size={26} color="#ffd700" />
+        <div className="rotations-grid">
+          {labSectionsData.map((sec) => {
+            const IconComp = sec.icon;
+            return (
+              <div className="rotation-card" key={sec.id}>
+                <div className="rotation-card-glow" aria-hidden="true"></div>
+                <div className="rotation-card-header">
+                  <span className="rotation-badge">SECTION 0{sec.id} / 09</span>
+                  <div className="rotation-icon-wrapper">
+                    <IconComp size={24} className="rotation-icon" />
                   </div>
-                  <h3>{sec.name}</h3>
-                  <p>{sec.desc}</p>
                 </div>
-              );
-            })}
-          </div>
-
-          {/* Horizontal Scroll Progress Indicator */}
-          <div className="horizontal-scroll-footer">
-            <div className="horizontal-progress-bar">
-              <div 
-                className="horizontal-progress-fill" 
-                style={{ width: `${Math.max(8, scrollProgress * 100)}%` }} 
-              />
-            </div>
-            <div className="horizontal-scroll-hint">
-              <span>CARD PROGRESS ({Math.min(9, Math.floor(scrollProgress * 9) + 1)} / 09) — SWIPING HORIZONTALLY</span>
-              <span className="scroll-arrow">{scrollProgress >= 0.95 ? 'CONTINUE SCROLLING DOWN ↓' : 'KEEP SCROLLING DOWN ↓'}</span>
-            </div>
-          </div>
+                <h3 className="rotation-title">{sec.name}</h3>
+                <p className="rotation-desc">{sec.desc}</p>
+                <div className="rotation-hospital-tag">
+                  <Building2 size={13} /> Mount Carmel Diocesan General Hospital
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

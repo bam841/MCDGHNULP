@@ -73,7 +73,7 @@ export default function HomeSection({ scrollToSection }) {
           </p>
 
           <div className="hero-actions">
-            <button className="btn-primary" onClick={() => handleScrollTo('about')}>
+            <button className="btn-primary" onClick={() => handleScrollTo('rotations')}>
               <Stethoscope size={16} /> Clinical Rotations <ArrowDownRight size={16} />
             </button>
             <button className="btn-secondary" onClick={() => handleScrollTo('interns')}>
