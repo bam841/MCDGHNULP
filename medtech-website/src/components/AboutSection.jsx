@@ -101,15 +101,15 @@ const carouselData = [
 ];
 
 const labSectionsData = [
-  { id: 1, name: 'Clinical Hematology', icon: Droplet, desc: 'Analysis of blood cellular components, coagulation profiles, hemoglobinopathies, and bone marrow smears.' },
+  { id: 1, name: 'Hematology', icon: Droplet, desc: 'Analysis of blood cellular components, coagulation profiles, hemoglobinopathies, and blood cell morphologies.' },
   { id: 2, name: 'Clinical Chemistry', icon: TestTube, desc: 'Quantitative spectrophotometric analysis of blood glucose, electrolytes, lipid profiles, and cardiac enzyme markers.' },
-  { id: 3, name: 'Clinical Microbiology', icon: Dna, desc: 'Isolation, Gram staining, biochemical identification, and antimicrobial susceptibility testing of bacterial pathogens.' },
+  { id: 3, name: 'Microbiology', icon: Dna, desc: 'Isolation, Gram staining, biochemical identification, and antimicrobial susceptibility testing of bacterial pathogens.' },
   { id: 4, name: 'Blood Bank / Immunohematology', icon: Syringe, desc: 'Blood donor screening, ABO/Rh typing, antibody identification, and emergency compatibility crossmatching.' },
-  { id: 5, name: 'Clinical Microscopy & Urinalysis', icon: Eye, desc: 'Physical, chemical, and microscopic urinary sediment analysis, urine protein profiling, and renal function screening.' },
-  { id: 6, name: 'Parasitology', icon: Bug, desc: 'Identification of intestinal and blood parasites, ova, protozoans, and microscopic parasite morphology.' },
+  { id: 5, name: 'Clinical Microscopy', icon: Eye, desc: 'Physical, chemical, and microscopic urinary sediment analysis, urine protein profiling, and body fluid examination.' },
+  { id: 6, name: 'Phlebotomy', icon: Bug, desc: 'Venipuncture, specimen collection techniques, tube sequencing, anti-coagulant handling, and patient care.' },
   { id: 7, name: 'Histopathology & Cytology', icon: Microscope, desc: 'Tissue processing, H&E paraffin section staining, frozen biopsy analysis, and Papanicolaou cytodiagnostics.' },
   { id: 8, name: 'Immunology & Serology', icon: ShieldCheck, desc: 'Serum antibody-antigen reaction testing, autoimmune disease screening, syphilis, and viral hepatitis assays.' },
-  { id: 9, name: 'Molecular Diagnostics', icon: Binary, desc: 'Real-time PCR nucleic acid amplification, viral load quantification, and advanced genetic diagnostic panels.' }
+  { id: 9, name: 'Laboratory Management', icon: Binary, desc: 'Quality assurance systems, biosafety protocols, specimen archiving, inventory control, and laboratory operations.' }
 ];
 
 export default function AboutSection() {
