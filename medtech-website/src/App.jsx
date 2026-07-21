@@ -43,10 +43,10 @@ export default function App() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%' }}>
       <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
       
-      <main style={{ flexGrow: 1, width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
+      <main style={{ flexGrow: 1, width: '100%' }}>
         <div id="home" className="container">
           <HomeSection scrollToSection={scrollToSection} />
         </div>

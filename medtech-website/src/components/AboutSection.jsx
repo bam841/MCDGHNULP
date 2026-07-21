@@ -136,7 +136,7 @@ export default function AboutSection() {
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         const maxTranslate = Math.max(0, trackWidth - windowWidth + 120);
-        const calculatedHeight = Math.max(windowHeight * 3, windowHeight + maxTranslate + 250);
+        const calculatedHeight = Math.max(windowHeight * 4, windowHeight + maxTranslate + 500);
         setWrapperHeightPx(calculatedHeight);
       }
     };

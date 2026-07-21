@@ -50,8 +50,8 @@ img, svg, video, canvas {
 
 html, body, #root {
   width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
