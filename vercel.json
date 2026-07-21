@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd medtech-website && npm install && npm run build",
+  "outputDirectory": "medtech-website/dist",
+  "installCommand": "cd medtech-website && npm install"
+}
