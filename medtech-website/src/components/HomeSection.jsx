@@ -1,7 +1,9 @@
-import React from 'react';
-import { ArrowDownRight, Stethoscope, Microscope, Award, Image as ImageIcon } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowDownRight, Stethoscope, Microscope, Award, Image as ImageIcon, Focus, Scan } from 'lucide-react';
 
 export default function HomeSection({ scrollToSection }) {
+  const [apertureKey, setApertureKey] = useState(0);
+
   const handleScrollTo = (sectionId) => {
     if (scrollToSection) {
       scrollToSection(sectionId);
@@ -10,32 +12,46 @@ export default function HomeSection({ scrollToSection }) {
     }
   };
 
+  const handleRefocus = () => {
+    setApertureKey(prev => prev + 1);
+  };
+
   return (
     <section className="page-section">
-      {/* Hero Header Section */}
-      <div className="hero-card">
-        <div className="hero-meta-row">
-          <span className="hero-tag">CLASS OF 2026</span>
-          <span className="hero-dot">/</span>
-          <span className="hero-tag">CLINICAL INTERNSHIP PORTAL</span>
+      {/* Hero Header Section - Microscope Focus Reveal (Aperture Lens) */}
+      <div className="hero-aperture-container" key={apertureKey}>
+        {/* Expanding Glowing Aperture Lens Ring Overlay */}
+        <div className="microscope-aperture-ring" aria-hidden="true">
+          <div className="aperture-reticle-crosshair"></div>
         </div>
-        
-        <h1 className="hero-title">
-          Precision in Diagnostics, <br />
-          <span className="gold-accent">Excellence in Clinical Duty</span>
-        </h1>
 
-        <p className="hero-subtitle">
-          The official Medical Technology clinical internship archive for <strong>BATCH NU-LIPA ALPHA</strong> at National University Lipa — documenting microscopic accuracy, specimen analyses, and hospital laboratory rotations.
-        </p>
+        <div className="hero-card hero-aperture-viewport">
+          <div className="hero-meta-row">
+            <span className="hero-tag">CLASS OF 2026</span>
+            <span className="hero-dot">/</span>
+            <span className="hero-tag">CLINICAL INTERNSHIP PORTAL</span>
+            <button className="aperture-focus-trigger" onClick={handleRefocus} title="Re-focus Microscope Aperture Lens">
+              <Focus size={12} /> <span>100x OPTICAL FOCUS</span>
+            </button>
+          </div>
+          
+          <h1 className="hero-title">
+            Precision in Diagnostics, <br />
+            <span className="gold-accent">Excellence in Clinical Duty</span>
+          </h1>
 
-        <div className="hero-actions">
-          <button className="btn-primary" onClick={() => handleScrollTo('about')}>
-            <Stethoscope size={16} /> Clinical Rotations <ArrowDownRight size={16} />
-          </button>
-          <button className="btn-secondary" onClick={() => handleScrollTo('interns')}>
-            <Microscope size={16} /> Intern Roster
-          </button>
+          <p className="hero-subtitle">
+            The official Medical Technology clinical internship archive for <strong>BATCH NU-LIPA ALPHA</strong> at National University Lipa — documenting microscopic accuracy, specimen analyses, and hospital laboratory rotations.
+          </p>
+
+          <div className="hero-actions">
+            <button className="btn-primary" onClick={() => handleScrollTo('about')}>
+              <Stethoscope size={16} /> Clinical Rotations <ArrowDownRight size={16} />
+            </button>
+            <button className="btn-secondary" onClick={() => handleScrollTo('interns')}>
+              <Microscope size={16} /> Intern Roster
+            </button>
+          </div>
         </div>
       </div>
 
