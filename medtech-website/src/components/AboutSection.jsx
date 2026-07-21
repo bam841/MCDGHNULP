@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Droplet, TestTube, Dna, Syringe, Eye, Bug, Microscope, ShieldCheck, Binary } from 'lucide-react';
 
 const carouselData = [
@@ -115,7 +115,10 @@ const labSectionsData = [
 export default function AboutSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [visibleCardIds, setVisibleCardIds] = useState(new Set());
+  
+  const stickyWrapperRef = useRef(null);
+  const trackRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     if (isPaused) return;
@@ -126,24 +129,24 @@ export default function AboutSection() {
   }, [isPaused]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cardId = Number(entry.target.getAttribute('data-card-id'));
-            if (cardId) {
-              setVisibleCardIds((prev) => new Set(prev).add(cardId));
-            }
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
-    );
+    const handleScroll = () => {
+      if (!stickyWrapperRef.current) return;
+      
+      const wrapperRect = stickyWrapperRef.current.getBoundingClientRect();
+      const wrapperTop = wrapperRect.top;
+      const wrapperHeight = wrapperRect.height;
+      const windowHeight = window.innerHeight;
+      
+      const scrollableDistance = wrapperHeight - windowHeight;
+      if (scrollableDistance <= 0) return;
 
-    const cardElements = document.querySelectorAll('.dept-card[data-card-id]');
-    cardElements.forEach((el) => observer.observe(el));
+      const progress = Math.max(0, Math.min(1, -wrapperTop / scrollableDistance));
+      setScrollProgress(progress);
+    };
 
-    return () => observer.disconnect();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handlePrev = () => {
@@ -155,6 +158,18 @@ export default function AboutSection() {
   };
 
   const currentSlide = carouselData[currentIndex];
+
+  const getTransformStyle = () => {
+    if (!trackRef.current) return {};
+    const trackWidth = trackRef.current.scrollWidth;
+    const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 1000;
+    const maxTranslate = Math.max(0, trackWidth - windowWidth + 60);
+    const translateX = -scrollProgress * maxTranslate;
+    return {
+      transform: `translate3d(${translateX}px, 0, 0)`,
+      willChange: 'transform'
+    };
+  };
 
   return (
     <section className="page-section">
@@ -214,33 +229,49 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* 9 Clinical Laboratory Sections Grid */}
-      <div className="section-header section-header-dept">
+      {/* 9 Clinical Laboratory Sections Sticky Horizontal Scroll Pinning */}
+      <div className="section-header section-header-dept" style={{ marginTop: '3.5rem' }}>
         <span className="section-tag">9 Clinical Rotations</span>
         <h3 className="section-title dept-section-title">Major Laboratory Sections</h3>
+        <p className="section-subtitle">Keep scrolling down to navigate through all 9 cards horizontally from left to right.</p>
       </div>
 
-      <div className="dept-grid">
-        {labSectionsData.map((sec, index) => {
-          const IconComp = sec.icon;
-          const isVisible = visibleCardIds.has(sec.id);
-          return (
-            <div 
-              className={`dept-card ${isVisible ? 'card-revealed' : 'card-hidden'}`} 
-              key={sec.id}
-              data-card-id={sec.id}
-              style={{
-                transitionDelay: `${(index % 3) * 110}ms`
-              }}
-            >
-              <div className="dept-icon">
-                <IconComp size={24} color="#ffd700" />
-              </div>
-              <h3>{sec.name}</h3>
-              <p>{sec.desc}</p>
+      <div className="horizontal-sticky-wrapper" ref={stickyWrapperRef}>
+        <div className="horizontal-sticky-content">
+          <div 
+            className="horizontal-track-container" 
+            ref={trackRef}
+            style={getTransformStyle()}
+          >
+            {labSectionsData.map((sec) => {
+              const IconComp = sec.icon;
+              return (
+                <div className="horizontal-dept-card" key={sec.id}>
+                  <div className="dept-card-badge">SECTION 0{sec.id} / 09</div>
+                  <div className="dept-icon">
+                    <IconComp size={26} color="#ffd700" />
+                  </div>
+                  <h3>{sec.name}</h3>
+                  <p>{sec.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Horizontal Scroll Progress Indicator */}
+          <div className="horizontal-scroll-footer">
+            <div className="horizontal-progress-bar">
+              <div 
+                className="horizontal-progress-fill" 
+                style={{ width: `${Math.max(8, scrollProgress * 100)}%` }} 
+              />
             </div>
-          );
-        })}
+            <div className="horizontal-scroll-hint">
+              <span>SECTION PROGRESS ({Math.min(9, Math.floor(scrollProgress * 9) + 1)} / 09)</span>
+              <span className="scroll-arrow">SCROLL DOWN ↓</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
