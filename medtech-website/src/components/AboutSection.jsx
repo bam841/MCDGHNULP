@@ -514,7 +514,7 @@ export default function AboutSection() {
           </div>
 
           <div className="rotations-swipe-hint">
-            <span>← SWIPE CARDS LEFT / RIGHT TO EXPLORE →</span>
+            <span>SWIPE CARDS LEFT OR RIGHT TO EXPLORE</span>
           </div>
         </div>
       </div>
