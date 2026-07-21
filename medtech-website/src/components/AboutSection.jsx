@@ -294,6 +294,26 @@ export default function AboutSection() {
     setStoryLiked((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty('--spotlight-x', `${x}%`);
+    card.style.setProperty('--spotlight-y', `${y}%`);
+  };
+
+  const handleTouchMove = (e) => {
+    if (e.touches[0]) {
+      const card = e.currentTarget;
+      const rect = card.getBoundingClientRect();
+      const x = ((e.touches[0].clientX - rect.left) / rect.width) * 100;
+      const y = ((e.touches[0].clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--spotlight-x', `${x}%`);
+      card.style.setProperty('--spotlight-y', `${y}%`);
+    }
+  };
+
   return (
     <section className="page-section">
       {/* SECTION HEADER & ABOUT NARRATIVE */}
@@ -305,14 +325,18 @@ export default function AboutSection() {
         </p>
       </div>
 
-      {/* ANIMATED NARRATIVE STORY SHOWCASE WITH SCROLL COLOR SWEEP */}
+      {/* ANIMATED NARRATIVE STORY SHOWCASE WITH ROAMING SPOTLIGHT */}
       <div 
         className={`narrative-story-container ${isNarrativeInView ? 'in-view' : ''}`}
         ref={narrativeRef}
       >
         {/* Story Card 1: The Pioneering Legacy */}
-        <div className="narrative-card card-pioneer">
-          <div className="narrative-color-beam" aria-hidden="true"></div>
+        <div 
+          className="narrative-card card-pioneer"
+          onMouseMove={handleMouseMove}
+          onTouchMove={handleTouchMove}
+        >
+          <div className="roaming-spotlight-beam" aria-hidden="true"></div>
           <div className="narrative-card-glow" aria-hidden="true"></div>
           <div className="narrative-header-row">
             <div className="narrative-icon-badge">
@@ -326,8 +350,12 @@ export default function AboutSection() {
         </div>
 
         {/* Story Card 2: Team Composition & Unity */}
-        <div className="narrative-card card-team">
-          <div className="narrative-color-beam" aria-hidden="true"></div>
+        <div 
+          className="narrative-card card-team"
+          onMouseMove={handleMouseMove}
+          onTouchMove={handleTouchMove}
+        >
+          <div className="roaming-spotlight-beam" aria-hidden="true"></div>
           <div className="narrative-card-glow" aria-hidden="true"></div>
           <div className="narrative-header-row">
             <div className="narrative-icon-badge cyan-badge">
@@ -357,8 +385,12 @@ export default function AboutSection() {
         </div>
 
         {/* Story Card 3: Legacy of Excellence */}
-        <div className="narrative-card card-legacy">
-          <div className="narrative-color-beam" aria-hidden="true"></div>
+        <div 
+          className="narrative-card card-legacy"
+          onMouseMove={handleMouseMove}
+          onTouchMove={handleTouchMove}
+        >
+          <div className="roaming-spotlight-beam" aria-hidden="true"></div>
           <div className="narrative-card-glow" aria-hidden="true"></div>
           <div className="narrative-header-row">
             <div className="narrative-icon-badge amber-badge">
