@@ -1,7 +1,18 @@
-import React from 'react';
-import { ArrowDownRight, Stethoscope, Microscope, Award, Image as ImageIcon, Activity, Scan, Sparkles } from 'lucide-react';
+import React, { useRef } from 'react';
+import { ArrowDownRight, Stethoscope, Microscope, Award, Image as ImageIcon } from 'lucide-react';
 
 export default function HomeSection({ scrollToSection }) {
+  const containerRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    containerRef.current.style.setProperty('--mouse-x', `${x}px`);
+    containerRef.current.style.setProperty('--mouse-y', `${y}px`);
+  };
+
   const handleScrollTo = (sectionId) => {
     if (scrollToSection) {
       scrollToSection(sectionId);
@@ -12,38 +23,49 @@ export default function HomeSection({ scrollToSection }) {
 
   return (
     <section className="page-section">
-      {/* Hero Header Section - Modern Continuous Diagnostic Microscope HUD */}
-      <div className="hero-diagnostic-container">
-        {/* Continuous Looping Laser Scan Beam */}
-        <div className="diagnostic-scan-beam" aria-hidden="true"></div>
-
-        {/* Ambient Looping Micro-Specimen Particles */}
-        <div className="specimen-particle-field" aria-hidden="true">
-          <div className="specimen-particle p1"></div>
-          <div className="specimen-particle p2"></div>
-          <div className="specimen-particle p3"></div>
-          <div className="specimen-particle p4"></div>
+      {/* Event Pakulo Showcase Hero Container with 3D DNA Helix */}
+      <div 
+        className="hero-pakulo-container"
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+      >
+        {/* Continuous 3D Spiraling DNA Double Helix Background */}
+        <div className="dna-helix-container" aria-hidden="true">
+          {Array.from({ length: 16 }).map((_, index) => (
+            <div 
+              key={index} 
+              className="dna-node-pair" 
+              style={{ '--index': index }}
+            >
+              <span className="dna-node node-left"></span>
+              <span className="dna-rung"></span>
+              <span className="dna-node node-right"></span>
+            </div>
+          ))}
         </div>
 
-        {/* Corner Reticle HUD Brackets */}
-        <div className="hud-corner top-left"></div>
-        <div className="hud-corner top-right"></div>
-        <div className="hud-corner bottom-left"></div>
-        <div className="hud-corner bottom-right"></div>
+        {/* Continuous 3D Rotating Holographic Iris Scanner Rings */}
+        <div className="hologram-scanner-viewport" aria-hidden="true">
+          <div className="holo-ring holo-ring-cw">
+            <div className="holo-ticks"></div>
+          </div>
+          <div className="holo-ring holo-ring-ccw">
+            <div className="holo-nodes"></div>
+          </div>
+          <div className="holo-center-pulse"></div>
+        </div>
 
-        <div className="hero-card hero-ambient-viewport">
+        {/* Hero Content Sitting Directly on Dark Grid */}
+        <div className="hero-card hero-pakulo-content">
           <div className="hero-meta-row">
             <span className="hero-tag">CLASS OF 2026</span>
             <span className="hero-dot">/</span>
             <span className="hero-tag">CLINICAL INTERNSHIP PORTAL</span>
-            <span className="live-status-pill">
-              <Activity size={12} className="pulse-icon" /> <span>LIVE DIAGNOSTIC FEED</span>
-            </span>
           </div>
           
           <h1 className="hero-title">
             Precision in Diagnostics, <br />
-            <span className="gold-shimmer-text">Excellence in Clinical Duty</span>
+            <span className="holographic-gold-text">Excellence in Clinical Duty</span>
           </h1>
 
           <p className="hero-subtitle">
