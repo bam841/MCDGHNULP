@@ -1383,8 +1383,23 @@ body::after {
 }
 
 @media (max-width: 768px) {
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-text h1 {
+    font-size: 0.95rem;
+  }
+
+  .brand-text span {
+    font-size: 0.65rem;
+  }
+
   .mobile-menu-toggle {
     display: flex;
+    width: 38px;
+    height: 38px;
   }
 
   .header-container {
@@ -1396,7 +1411,7 @@ body::after {
   .nav-buttons-wrapper {
     display: none;
     position: absolute;
-    top: calc(100% + 0.75rem);
+    top: calc(100% + 0.5rem);
     left: 0;
     right: 0;
     flex-direction: column;
@@ -1406,7 +1421,7 @@ body::after {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: var(--radius-lg);
-    padding: 0.75rem;
+    padding: 0.5rem;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
     z-index: 1000;
     opacity: 0;
@@ -1425,62 +1440,155 @@ body::after {
   .nav-btn {
     width: 100%;
     justify-content: flex-start;
-    padding: 0.85rem 1.25rem;
-    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+    font-size: 0.88rem;
     border-radius: var(--radius-md);
-    min-height: 48px;
+    min-height: 42px;
+  }
+
+  .page-section {
+    padding: 1.5rem 0 2.5rem;
   }
 
   .hero-card {
-    padding: 2rem 1.25rem;
+    padding: 1.35rem 0.9rem;
     text-align: center;
   }
 
+  .hero-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+
   .hero-title {
-    font-size: clamp(1.8rem, 6.5vw, 2.6rem);
+    font-size: clamp(1.3rem, 5.2vw, 1.7rem);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    margin-bottom: 1.25rem;
   }
 
   .hero-actions {
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    flex-direction: column;
+    gap: 0.6rem;
     width: 100%;
   }
 
   .btn-primary, .btn-secondary {
     width: 100%;
     justify-content: center;
-    min-height: 48px;
+    min-height: 42px;
+    padding: 0.65rem 1rem;
+    font-size: 0.88rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.3rem, 5vw, 1.6rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.82rem;
   }
 
   .dept-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .dept-card {
+    padding: 1.15rem 1rem;
+  }
+
+  .dept-card h3 {
+    font-size: 1rem;
+  }
+
+  .dept-card p {
+    font-size: 0.82rem;
   }
 
   .interns-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .intern-card-header {
+    height: 180px;
+  }
+
+  .intern-name {
+    font-size: 1.05rem;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.85rem;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+  }
+
+  .stat-card {
+    padding: 0.85rem 0.65rem;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    line-height: 1.25;
+  }
+
+  .cover-landing-card {
+    padding: 0.85rem;
+    margin-top: 1.5rem;
+  }
+
+  .cover-image-wrapper {
+    max-height: 200px;
   }
 
   .cover-info-bar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    padding: 0.85rem 0.65rem;
+    gap: 0.75rem;
+  }
+
+  .cover-title-box h3 {
+    font-size: 0.98rem;
+  }
+
+  .cover-title-box p {
+    font-size: 0.78rem;
   }
 
   .cover-stats-mini {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    gap: 0.35rem;
+  }
+
+  .mini-stat-num {
+    font-size: 1.05rem;
+  }
+
+  .mini-stat-label {
+    font-size: 0.65rem;
+  }
+
+  .carousel-wrapper {
+    margin-top: 1.25rem;
   }
 
   .carousel-slide {
@@ -1488,17 +1596,29 @@ body::after {
   }
 
   .slide-image-box {
-    min-height: 240px;
-    max-height: 280px;
+    min-height: 190px;
+    max-height: 220px;
   }
 
   .slide-content {
-    padding: 1.5rem 1.25rem;
+    padding: 1.15rem 0.85rem;
+  }
+
+  .slide-title {
+    font-size: 1.1rem;
+  }
+
+  .slide-description {
+    font-size: 0.82rem;
+  }
+
+  .slide-quote {
+    font-size: 0.8rem;
   }
 
   .gallery-image-wrapper {
     aspect-ratio: 4 / 3;
-    max-height: 380px;
+    max-height: 280px;
   }
 
   .lightbox-nav-btn.prev { left: 0.5rem; }
@@ -1508,63 +1628,79 @@ body::after {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    padding: 0.65rem 0.85rem;
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 0.85rem;
+    padding: 0 0.75rem;
   }
 
   .brand-text h1 {
-    font-size: 1.05rem;
+    font-size: 0.88rem;
+  }
+
+  .brand-text span {
+    font-size: 0.6rem;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.65rem;
+    gap: 0.5rem;
   }
 
   .stat-card {
-    padding: 1rem 0.75rem;
+    padding: 0.75rem 0.5rem;
   }
 
   .stat-number {
-    font-size: 1.6rem;
+    font-size: 1.25rem;
   }
 
   .stat-label {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
   }
 
   .hero-meta-row {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.35rem;
   }
 
   .marquee-section-wrapper {
-    padding: 2rem 0;
-    margin: 2rem 0;
+    padding: 1.5rem 0;
+    margin: 1.5rem 0;
     width: 100%;
     max-width: 100%;
     overflow: hidden;
   }
 
   .marquee-word {
-    font-size: clamp(1.4rem, 6vw, 2.4rem);
-    padding: 0 0.5rem;
+    font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+    padding: 0 0.35rem;
+  }
+
+  .marquee-divider {
+    font-size: 1.1rem;
   }
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
+    gap: 0.5rem;
   }
 
   .filter-tags {
     overflow-x: auto;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
+    gap: 0.4rem;
+  }
+
+  .filter-chip {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
   }
 }
 
