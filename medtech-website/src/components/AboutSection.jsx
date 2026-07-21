@@ -118,8 +118,28 @@ export default function AboutSection() {
   
   const stickyWrapperRef = useRef(null);
   const trackRef = useRef(null);
+  const narrativeRef = useRef(null);
+  const [isNarrativeInView, setIsNarrativeInView] = useState(false);
+
   const [scrollProgress, setScrollProgress] = useState(0);
   const [wrapperHeightPx, setWrapperHeightPx] = useState(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsNarrativeInView(true);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (narrativeRef.current) {
+      observer.observe(narrativeRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (isPaused) return;
@@ -205,10 +225,14 @@ export default function AboutSection() {
         </p>
       </div>
 
-      {/* ANIMATED NARRATIVE STORY SHOWCASE */}
-      <div className="narrative-story-container">
+      {/* ANIMATED NARRATIVE STORY SHOWCASE WITH SCROLL COLOR SWEEP */}
+      <div 
+        className={`narrative-story-container ${isNarrativeInView ? 'in-view' : ''}`}
+        ref={narrativeRef}
+      >
         {/* Story Card 1: The Pioneering Legacy */}
         <div className="narrative-card card-pioneer">
+          <div className="narrative-color-beam" aria-hidden="true"></div>
           <div className="narrative-card-glow" aria-hidden="true"></div>
           <div className="narrative-header-row">
             <div className="narrative-icon-badge">
@@ -223,6 +247,7 @@ export default function AboutSection() {
 
         {/* Story Card 2: Team Composition & Unity */}
         <div className="narrative-card card-team">
+          <div className="narrative-color-beam" aria-hidden="true"></div>
           <div className="narrative-card-glow" aria-hidden="true"></div>
           <div className="narrative-header-row">
             <div className="narrative-icon-badge cyan-badge">
@@ -253,6 +278,7 @@ export default function AboutSection() {
 
         {/* Story Card 3: Legacy of Excellence */}
         <div className="narrative-card card-legacy">
+          <div className="narrative-color-beam" aria-hidden="true"></div>
           <div className="narrative-card-glow" aria-hidden="true"></div>
           <div className="narrative-header-row">
             <div className="narrative-icon-badge amber-badge">
