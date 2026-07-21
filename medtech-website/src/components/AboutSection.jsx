@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Droplet, TestTube, Dna, Syringe, Eye, Bug, Microscope, ShieldCheck, Binary, Award, Users, HeartPulse, Building2, Sparkles, GraduationCap, Compass } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Droplet, TestTube, Dna, Syringe, Eye, Bug, Microscope, ShieldCheck, Binary, Award, Users, HeartPulse, Building2, Sparkles, GraduationCap, Compass, X, Heart } from 'lucide-react';
+
+const InstagramIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </svg>
+);
 
 const carouselData = [
   {
@@ -101,20 +107,87 @@ const carouselData = [
 ];
 
 const labSectionsData = [
-  { id: 1, name: 'Hematology', icon: Droplet, desc: 'Analysis of blood cellular components, coagulation profiles, hemoglobinopathies, and blood cell morphologies.' },
-  { id: 2, name: 'Clinical Chemistry', icon: TestTube, desc: 'Quantitative spectrophotometric analysis of blood glucose, electrolytes, lipid profiles, and cardiac enzyme markers.' },
-  { id: 3, name: 'Microbiology', icon: Dna, desc: 'Isolation, Gram staining, biochemical identification, and antimicrobial susceptibility testing of bacterial pathogens.' },
-  { id: 4, name: 'Blood Bank / Immunohematology', icon: Syringe, desc: 'Blood donor screening, ABO/Rh typing, antibody identification, and emergency compatibility crossmatching.' },
-  { id: 5, name: 'Clinical Microscopy', icon: Eye, desc: 'Routine urinalysis, physical and chemical reagent strip testing, microscopic urinary sediment examination, and renal function parameters.' },
-  { id: 6, name: 'Phlebotomy', icon: Droplet, desc: 'Patient preparation, venipuncture, capillary blood collection techniques, anti-coagulant tube sequencing, and proper specimen handling.' },
-  { id: 7, name: 'Histopathology & Cytology', icon: Microscope, desc: 'Tissue processing, H&E paraffin section staining, frozen biopsy analysis, and Papanicolaou cytodiagnostics.' },
-  { id: 8, name: 'Immunology & Serology', icon: ShieldCheck, desc: 'Serum antibody-antigen reaction testing, autoimmune disease screening, syphilis, and viral hepatitis assays.' },
-  { id: 9, name: 'Laboratory Management', icon: ShieldCheck, desc: 'Quality assurance systems, laboratory operations, biosafety protocols, inventory control, and administrative workflows.' }
+  { 
+    id: 1, 
+    name: 'Hematology', 
+    icon: Droplet, 
+    desc: 'Analysis of blood cellular components, coagulation profiles, hemoglobinopathies, and blood cell morphologies under 100x oil-immersion.',
+    quote: '"Behind every differential count is a patient waiting for diagnostic clarity."',
+    image: '/assets/gallery/1c.jpg'
+  },
+  { 
+    id: 2, 
+    name: 'Clinical Chemistry', 
+    icon: TestTube, 
+    desc: 'Quantitative spectrophotometric analysis of blood glucose, electrolytes, lipid profiles, and cardiac enzyme markers.',
+    quote: '"Precision chemistry calibration guarantees reliable treatment management."',
+    image: '/assets/gallery/2c.jpg'
+  },
+  { 
+    id: 3, 
+    name: 'Microbiology', 
+    icon: Dna, 
+    desc: 'Isolation, Gram staining, biochemical identification, and antimicrobial susceptibility testing of bacterial pathogens.',
+    quote: '"Targeting microbial pathogens to guide antibiotic therapy."',
+    image: '/assets/gallery/6c.jpg'
+  },
+  { 
+    id: 4, 
+    name: 'Blood Bank / Immunohematology', 
+    icon: Syringe, 
+    desc: 'Blood donor screening, ABO/Rh typing, antibody identification, and emergency compatibility crossmatching.',
+    quote: '"Safe blood transfusions save lives — zero error margin allowed."',
+    image: '/assets/gallery/4c.jpg'
+  },
+  { 
+    id: 5, 
+    name: 'Clinical Microscopy', 
+    icon: Eye, 
+    desc: 'Routine urinalysis, physical and chemical reagent strip testing, microscopic urinary sediment examination, and renal function parameters.',
+    quote: '"Microscopic sediment analysis reveals early metabolic & renal signals."',
+    image: '/assets/gallery/7c.jpg'
+  },
+  { 
+    id: 6, 
+    name: 'Phlebotomy', 
+    icon: Droplet, 
+    desc: 'Patient preparation, venipuncture, capillary blood collection techniques, anti-coagulant tube sequencing, and proper specimen handling.',
+    quote: '"Gentle hands and precise technique ensure pre-analytical quality."',
+    image: '/assets/gallery/12c.jpg'
+  },
+  { 
+    id: 7, 
+    name: 'Histopathology & Cytology', 
+    icon: Microscope, 
+    desc: 'Tissue processing, H&E paraffin section staining, frozen biopsy analysis, and Papanicolaou cytodiagnostics.',
+    quote: '"Meticulous staining reveals cellular diagnostic answers."',
+    image: '/assets/gallery/16c.jpg'
+  },
+  { 
+    id: 8, 
+    name: 'Immunology & Serology', 
+    icon: ShieldCheck, 
+    desc: 'Serum antibody-antigen reaction testing, autoimmune disease screening, syphilis, and viral hepatitis assays.',
+    quote: '"Uncovering immune system responses for targeted patient care."',
+    image: '/assets/gallery/15c.jpg'
+  },
+  { 
+    id: 9, 
+    name: 'Laboratory Management', 
+    icon: ShieldCheck, 
+    desc: 'Quality assurance systems, laboratory operations, biosafety protocols, inventory control, and administrative workflows.',
+    quote: '"Leadership and biosafety standards uphold hospital laboratory integrity."',
+    image: '/assets/gallery/10c.jpg'
+  }
 ];
 
 export default function AboutSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+
+  // Instagram Instant Story Viewer Modal States
+  const [activeStoryIndex, setActiveStoryIndex] = useState(null);
+  const [storyLiked, setStoryLiked] = useState({});
   
   const stickyWrapperRef = useRef(null);
   const trackRef = useRef(null);
@@ -123,6 +196,15 @@ export default function AboutSection() {
 
   const [scrollProgress, setScrollProgress] = useState(0);
   const [wrapperHeightPx, setWrapperHeightPx] = useState(null);
+
+  // Auto-advance Instagram Story Viewer
+  useEffect(() => {
+    if (activeStoryIndex === null) return;
+    const timer = setTimeout(() => {
+      setActiveStoryIndex((prev) => (prev + 1) % labSectionsData.length);
+    }, 5500);
+    return () => clearTimeout(timer);
+  }, [activeStoryIndex]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -202,16 +284,27 @@ export default function AboutSection() {
 
   const currentSlide = carouselData[currentIndex];
 
-  const getTransformStyle = () => {
-    if (!trackRef.current) return {};
-    const trackWidth = trackRef.current.scrollWidth;
-    const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 1000;
-    const maxTranslate = Math.max(0, trackWidth - windowWidth + 80);
-    const translateX = -scrollProgress * maxTranslate;
-    return {
-      transform: `translate3d(${translateX}px, 0, 0)`,
-      willChange: 'transform'
-    };
+  const openStoryModal = (index) => {
+    setActiveStoryIndex(index);
+  };
+
+  const closeStoryModal = () => {
+    setActiveStoryIndex(null);
+  };
+
+  const nextStory = (e) => {
+    e?.stopPropagation();
+    setActiveStoryIndex((prev) => (prev + 1) % labSectionsData.length);
+  };
+
+  const prevStory = (e) => {
+    e?.stopPropagation();
+    setActiveStoryIndex((prev) => (prev - 1 + labSectionsData.length) % labSectionsData.length);
+  };
+
+  const toggleLike = (e, id) => {
+    e?.stopPropagation();
+    setStoryLiked((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   return (
@@ -354,15 +447,51 @@ export default function AboutSection() {
           <span className="section-tag">9 Clinical Rotations</span>
           <h2 className="section-title">Major Laboratory Rotations</h2>
           <p className="section-subtitle">
-            Comprehensive clinical training across 9 specialized laboratory divisions at <strong>Mount Carmel Diocesan General Hospital</strong>.
+            Tap any Instagram highlight ring or rotation card below for the <strong>Instant Instagram Story Viewer</strong> across 9 laboratory divisions at Mount Carmel Hospital.
           </p>
         </div>
 
+        {/* INSTAGRAM STORIES HIGHLIGHTS ROW */}
+        <div className="ig-stories-container">
+          <div className="ig-stories-header">
+            <span className="ig-stories-label">
+              <InstagramIcon size={16} /> INSTAGRAM HIGHLIGHTS / 9 CLINICAL ROTATIONS
+            </span>
+            <span className="ig-stories-hint">TAP CIRCLE FOR INSTANT STORY</span>
+          </div>
+
+          <div className="ig-stories-track">
+            {labSectionsData.map((sec, idx) => {
+              const IconComp = sec.icon;
+              return (
+                <button 
+                  key={sec.id} 
+                  className="ig-story-circle-btn" 
+                  onClick={() => openStoryModal(idx)}
+                  title={`View Instant Instagram Story for ${sec.name}`}
+                >
+                  <div className="ig-story-ring">
+                    <div className="ig-story-avatar">
+                      <IconComp size={22} color="#ffffff" />
+                    </div>
+                  </div>
+                  <span className="ig-story-title">{sec.name.split(' ')[0]}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 9 ROTATION CARDS GRID */}
         <div className="rotations-grid">
-          {labSectionsData.map((sec) => {
+          {labSectionsData.map((sec, idx) => {
             const IconComp = sec.icon;
             return (
-              <div className="rotation-card" key={sec.id}>
+              <div 
+                className="rotation-card clickable-rotation" 
+                key={sec.id}
+                onClick={() => openStoryModal(idx)}
+              >
                 <div className="rotation-card-glow" aria-hidden="true"></div>
                 <div className="rotation-card-header">
                   <span className="rotation-badge">SECTION 0{sec.id} / 09</span>
@@ -372,14 +501,102 @@ export default function AboutSection() {
                 </div>
                 <h3 className="rotation-title">{sec.name}</h3>
                 <p className="rotation-desc">{sec.desc}</p>
-                <div className="rotation-hospital-tag">
-                  <Building2 size={13} /> Mount Carmel Diocesan General Hospital
+
+                <div className="rotation-footer-row">
+                  <span className="rotation-hospital-tag">
+                    <Building2 size={13} /> Mount Carmel Hospital
+                  </span>
+                  <span className="rotation-ig-prompt">
+                    <InstagramIcon size={14} /> INSTANT STORY
+                  </span>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
+
+      {/* FULLSCREEN INSTAGRAM INSTANT STORY VIEWER MODAL */}
+      {activeStoryIndex !== null && (
+        <div className="ig-story-modal-overlay" onClick={closeStoryModal}>
+          <div className="ig-story-modal-content" onClick={(e) => e.stopPropagation()}>
+            {/* Top Segmented Progress Bars */}
+            <div className="ig-story-progress-bar-row">
+              {labSectionsData.map((sec, idx) => (
+                <div key={sec.id} className="ig-story-progress-segment">
+                  <div 
+                    className={`ig-story-progress-fill ${
+                      idx < activeStoryIndex ? 'completed' : idx === activeStoryIndex ? 'active' : ''
+                    }`}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Instagram Story Header */}
+            <div className="ig-story-header">
+              <div className="ig-story-user-info">
+                <div className="ig-story-avatar-small">
+                  <Microscope size={18} color="#ffd700" />
+                </div>
+                <div className="ig-story-user-text">
+                  <span className="ig-story-username">nulipa.alpha_interns</span>
+                  <span className="ig-story-location">Mount Carmel Hospital • SECTION 0{labSectionsData[activeStoryIndex].id}/09</span>
+                </div>
+              </div>
+              <button className="ig-story-close-btn" onClick={closeStoryModal} aria-label="Close Story">
+                <X size={22} />
+              </button>
+            </div>
+
+            {/* Story Image Canvas & Touch Controls */}
+            <div className="ig-story-media-box">
+              <img 
+                src={labSectionsData[activeStoryIndex].image} 
+                alt={labSectionsData[activeStoryIndex].name}
+                className="ig-story-image"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/cover_landing_page.jpeg";
+                }}
+              />
+
+              {/* Touch Side Navigators */}
+              <div className="ig-story-touch-left" onClick={prevStory} title="Previous Story"></div>
+              <div className="ig-story-touch-right" onClick={nextStory} title="Next Story"></div>
+
+              {/* Story Overlay Caption */}
+              <div className="ig-story-caption-overlay">
+                <span className="ig-story-dept-badge">
+                  ROTATION 0{labSectionsData[activeStoryIndex].id} / 09 • {labSectionsData[activeStoryIndex].name.toUpperCase()}
+                </span>
+                <h3 className="ig-story-dept-name">{labSectionsData[activeStoryIndex].name}</h3>
+                <p className="ig-story-desc">{labSectionsData[activeStoryIndex].desc}</p>
+                <blockquote className="ig-story-quote">{labSectionsData[activeStoryIndex].quote}</blockquote>
+              </div>
+            </div>
+
+            {/* Story Footer Actions */}
+            <div className="ig-story-footer">
+              <button 
+                className={`ig-story-like-btn ${storyLiked[labSectionsData[activeStoryIndex].id] ? 'liked' : ''}`}
+                onClick={(e) => toggleLike(e, labSectionsData[activeStoryIndex].id)}
+              >
+                <Heart 
+                  size={20} 
+                  fill={storyLiked[labSectionsData[activeStoryIndex].id] ? "#ef4444" : "none"} 
+                  color={storyLiked[labSectionsData[activeStoryIndex].id] ? "#ef4444" : "#ffffff"} 
+                />
+                <span>{storyLiked[labSectionsData[activeStoryIndex].id] ? 'Liked!' : 'Send Reaction'}</span>
+              </button>
+
+              <span className="ig-story-hospital-tag">
+                <Building2 size={13} /> Mount Carmel Diocesan General Hospital
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
