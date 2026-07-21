@@ -193,9 +193,9 @@ export default function AboutSection() {
       </div>
 
       {/* 9 Clinical Laboratory Sections Grid */}
-      <div className="section-header" style={{ marginBottom: '1.75rem', marginTop: '3.5rem' }}>
+      <div className="section-header section-header-dept">
         <span className="section-tag">9 Clinical Rotations</span>
-        <h3 className="section-title" style={{ fontSize: '1.8rem' }}>Major Laboratory Sections</h3>
+        <h3 className="section-title dept-section-title">Major Laboratory Sections</h3>
       </div>
 
       <div className="dept-grid">
