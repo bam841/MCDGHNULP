@@ -4,13 +4,13 @@ import { Search, Mail, Building2 } from 'lucide-react';
 const internsData = [
   {
     id: 1,
-    name: 'Class President, BSMT',
-    badge: 'Senior Intern',
+    name: 'Trisha Julianne A. Espiron',
+    badge: 'Class President',
     hospitalKey: 'st-jude',
     hospitalName: 'St. Jude Medical Center',
-    specialty: 'Microbiology & Parasitology',
+    specialty: 'Clinical Microscopy & Hematology',
     quote: '"Finding answers under the ocular lens to help doctors heal lives."',
-    image: '/assets/interns/president.jpg',
+    image: '/assets/interns/trisha_espiron.jpeg',
     facebook: 'https://facebook.com',
     instagram: 'https://instagram.com'
   },
