@@ -29,7 +29,7 @@ const carouselData = [
     badge: 'Blood Bank & Immunohematology',
     title: 'ABO/Rh Blood Typing & Crossmatching',
     description: 'Critical clinical duty hours spent verifying donor blood compatibility, checking anti-globulin reactions, and safeguarding emergency blood transfusions for patients.',
-    quote: '"Safe blood transfusions save lives — zero error margin allowed."',
+    quote: '"Safe blood transfusions save lives - zero error margin allowed."',
     image: '/assets/gallery/4c.jpg'
   },
   {
@@ -136,7 +136,7 @@ const labSectionsData = [
     name: 'Blood Bank / Immunohematology', 
     icon: Syringe, 
     desc: 'Blood donor screening, ABO/Rh typing, antibody identification, and emergency compatibility crossmatching.',
-    quote: '"Safe blood transfusions save lives — zero error margin allowed."',
+    quote: '"Safe blood transfusions save lives - zero error margin allowed."',
     image: '/assets/gallery/4c.jpg'
   },
   { 
@@ -319,7 +319,7 @@ export default function AboutSection() {
       {/* SECTION HEADER & ABOUT NARRATIVE */}
       <div className="section-header">
         <span className="section-tag">Pioneering Batch Story</span>
-        <h2 className="section-title">About NU–Lipa Alpha Interns</h2>
+        <h2 className="section-title">About NU-Lipa Alpha Interns</h2>
         <p className="section-subtitle">
           Paving the way as the inaugural clinical laboratory internship class at Mount Carmel Diocesan General Hospital.
         </p>
@@ -345,7 +345,7 @@ export default function AboutSection() {
             <span className="narrative-badge-tag">PIONEERING INTERNSHIP CLASS</span>
           </div>
           <p className="narrative-paragraph">
-            We are the <strong className="gold-sparkle-text">NU–Lipa Alpha Interns</strong>, the pioneering group of interns from <strong>National University–Lipa</strong> assigned to <strong className="gold-sparkle-text">Mount Carmel Diocesan General Hospital</strong>. As the first batch from our institution to complete our internship at this hospital, we proudly carry the title <span className="title-quote-badge">"Alpha Interns,"</span> symbolizing leadership, resilience, and the beginning of a meaningful partnership between our school and the institution.
+            We are the <strong className="gold-sparkle-text">NU-Lipa Alpha Interns</strong>, the pioneering group of interns from <strong>National University-Lipa</strong> assigned to <strong className="gold-sparkle-text">Mount Carmel Diocesan General Hospital</strong>. As the first batch from our institution to complete our internship at this hospital, we proudly carry the title <span className="title-quote-badge">"Alpha Interns,"</span> symbolizing leadership, resilience, and the beginning of a meaningful partnership between our school and the institution.
           </p>
         </div>
 
@@ -380,7 +380,7 @@ export default function AboutSection() {
           </div>
 
           <p className="narrative-paragraph">
-            Our team is composed of <strong>10 dedicated interns</strong>—<strong>6 women and 4 men</strong>—who bring diverse strengths, perspectives, and talents to patient care and clinical practice. Despite our different backgrounds and personalities, we are united by a shared commitment to learning, collaboration, and compassionate healthcare. Through teamwork, dedication, and professionalism, we strive to grow into competent and ethical healthcare professionals.
+            Our team is composed of <strong>10 dedicated interns</strong>-<strong>6 women and 4 men</strong>-who bring diverse strengths, perspectives, and talents to patient care and clinical practice. Despite our different backgrounds and personalities, we are united by a shared commitment to learning, collaboration, and compassionate healthcare. Through teamwork, dedication, and professionalism, we strive to grow into competent and ethical healthcare professionals.
           </p>
         </div>
 
@@ -399,14 +399,14 @@ export default function AboutSection() {
             <span className="narrative-badge-tag amber-tag">PAVING THE WAY</span>
           </div>
           <p className="narrative-paragraph">
-            As the first NU–Lipa interns to train at <strong className="gold-sparkle-text">Mount Carmel Diocesan General Hospital</strong>, we are honored to pave the way for future batches. We aspire to leave a lasting legacy of <strong className="gold-sparkle-text">excellence, integrity, and service</strong> while making a positive impact on the patients, hospital staff, and communities we serve.
+            As the first NU-Lipa interns to train at <strong className="gold-sparkle-text">Mount Carmel Diocesan General Hospital</strong>, we are honored to pave the way for future batches. We aspire to leave a lasting legacy of <strong className="gold-sparkle-text">excellence, integrity, and service</strong> while making a positive impact on the patients, hospital staff, and communities we serve.
           </p>
         </div>
       </div>
 
       <div className="section-header" style={{ marginTop: '4rem' }}>
         <span className="section-tag">Clinical Experiences</span>
-        <h2 className="section-title">Life On Duty — BATCH NU-LIPA ALPHA</h2>
+        <h2 className="section-title">Life On Duty - BATCH NU-LIPA ALPHA</h2>
         <p className="section-subtitle">
           Step inside 1,664 clinical duty hours across 9 major laboratory sections, specimen analyses, and hospital internship moments of NU-LIPA MedTech students.
         </p>
@@ -544,7 +544,7 @@ export default function AboutSection() {
                 </div>
                 <div className="ig-story-user-text">
                   <span className="ig-story-username">nulipa.alpha_interns</span>
-                  <span className="ig-story-location">Mount Carmel Hospital • SECTION 0{labSectionsData[activeStoryIndex].id}/09</span>
+                  <span className="ig-story-location">Mount Carmel Hospital / SECTION 0{labSectionsData[activeStoryIndex].id}/09</span>
                 </div>
               </div>
               <button className="ig-story-close-btn" onClick={closeStoryModal} aria-label="Close Story">
@@ -571,7 +571,7 @@ export default function AboutSection() {
               {/* Story Overlay Caption */}
               <div className="ig-story-caption-overlay">
                 <span className="ig-story-dept-badge">
-                  ROTATION 0{labSectionsData[activeStoryIndex].id} / 09 • {labSectionsData[activeStoryIndex].name.toUpperCase()}
+                  ROTATION 0{labSectionsData[activeStoryIndex].id} / 09 / {labSectionsData[activeStoryIndex].name.toUpperCase()}
                 </span>
                 <h3 className="ig-story-dept-name">{labSectionsData[activeStoryIndex].name}</h3>
                 <p className="ig-story-desc">{labSectionsData[activeStoryIndex].desc}</p>
