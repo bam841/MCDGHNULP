@@ -253,27 +253,6 @@ export default function AboutSection() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!stickyWrapperRef.current) return;
-      
-      const wrapperRect = stickyWrapperRef.current.getBoundingClientRect();
-      const wrapperTop = wrapperRect.top;
-      const wrapperHeight = wrapperRect.height;
-      const windowHeight = window.innerHeight;
-      
-      const scrollableDistance = wrapperHeight - windowHeight;
-      if (scrollableDistance <= 0) return;
-
-      const progress = Math.max(0, Math.min(1, -wrapperTop / scrollableDistance));
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + carouselData.length) % carouselData.length);
   };
@@ -283,6 +262,13 @@ export default function AboutSection() {
   };
 
   const currentSlide = carouselData[currentIndex];
+
+  const scrollRotations = (direction) => {
+    if (rotationTrackRef.current) {
+      const scrollAmount = direction === 'left' ? -340 : 340;
+      rotationTrackRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   const openStoryModal = (index) => {
     setActiveStoryIndex(index);
@@ -441,78 +427,62 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* 9 Clinical Laboratory Rotations Showcase Section */}
+      {/* 9 Clinical Laboratory Rotations Showcase Section - Horizontal Swipe Slider */}
       <div id="rotations" className="rotations-showcase-wrapper" style={{ marginTop: '4rem' }}>
         <div className="section-header">
           <span className="section-tag">9 Clinical Rotations</span>
           <h2 className="section-title">Major Laboratory Rotations</h2>
           <p className="section-subtitle">
-            Tap any Instagram highlight ring or rotation card below for the <strong>Instant Instagram Story Viewer</strong> across 9 laboratory divisions at Mount Carmel Hospital.
+            Swipe left or right to explore all 9 specialized laboratory rotations at <strong>Mount Carmel Diocesan General Hospital</strong>.
           </p>
         </div>
 
-        {/* INSTAGRAM STORIES HIGHLIGHTS ROW */}
-        <div className="ig-stories-container">
-          <div className="ig-stories-header">
-            <span className="ig-stories-label">
-              <InstagramIcon size={16} /> INSTAGRAM HIGHLIGHTS / 9 CLINICAL ROTATIONS
-            </span>
-            <span className="ig-stories-hint">TAP CIRCLE FOR INSTANT STORY</span>
-          </div>
+        {/* HORIZONTAL SWIPE CAROUSEL */}
+        <div className="rotations-swipe-wrapper">
+          <button 
+            className="rotations-scroll-btn prev" 
+            onClick={() => scrollRotations('left')}
+            aria-label="Swipe Left"
+          >
+            <ChevronLeft size={24} />
+          </button>
 
-          <div className="ig-stories-track">
-            {labSectionsData.map((sec, idx) => {
+          <button 
+            className="rotations-scroll-btn next" 
+            onClick={() => scrollRotations('right')}
+            aria-label="Swipe Right"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          <div className="rotations-swipe-track" ref={rotationTrackRef}>
+            {labSectionsData.map((sec) => {
               const IconComp = sec.icon;
               return (
-                <button 
-                  key={sec.id} 
-                  className="ig-story-circle-btn" 
-                  onClick={() => openStoryModal(idx)}
-                  title={`View Instant Instagram Story for ${sec.name}`}
-                >
-                  <div className="ig-story-ring">
-                    <div className="ig-story-avatar">
-                      <IconComp size={22} color="#ffffff" />
+                <div className="rotation-swipe-card" key={sec.id}>
+                  <div className="rotation-card-glow" aria-hidden="true"></div>
+                  <div className="rotation-card-header">
+                    <span className="rotation-badge">SECTION 0{sec.id} / 09</span>
+                    <div className="rotation-icon-wrapper">
+                      <IconComp size={24} className="rotation-icon" />
                     </div>
                   </div>
-                  <span className="ig-story-title">{sec.name.split(' ')[0]}</span>
-                </button>
+                  <h3 className="rotation-title">{sec.name}</h3>
+                  <p className="rotation-desc">{sec.desc}</p>
+
+                  <div className="rotation-card-footer">
+                    <span className="rotation-hospital-tag">
+                      <Building2 size={13} /> Mount Carmel Diocesan General Hospital
+                    </span>
+                  </div>
+                </div>
               );
             })}
           </div>
-        </div>
 
-        {/* 9 ROTATION CARDS GRID */}
-        <div className="rotations-grid">
-          {labSectionsData.map((sec, idx) => {
-            const IconComp = sec.icon;
-            return (
-              <div 
-                className="rotation-card clickable-rotation" 
-                key={sec.id}
-                onClick={() => openStoryModal(idx)}
-              >
-                <div className="rotation-card-glow" aria-hidden="true"></div>
-                <div className="rotation-card-header">
-                  <span className="rotation-badge">SECTION 0{sec.id} / 09</span>
-                  <div className="rotation-icon-wrapper">
-                    <IconComp size={24} className="rotation-icon" />
-                  </div>
-                </div>
-                <h3 className="rotation-title">{sec.name}</h3>
-                <p className="rotation-desc">{sec.desc}</p>
-
-                <div className="rotation-footer-row">
-                  <span className="rotation-hospital-tag">
-                    <Building2 size={13} /> Mount Carmel Hospital
-                  </span>
-                  <span className="rotation-ig-prompt">
-                    <InstagramIcon size={14} /> INSTANT STORY
-                  </span>
-                </div>
-              </div>
-            );
-          })}
+          <div className="rotations-swipe-hint">
+            <span>← SWIPE CARDS LEFT / RIGHT TO EXPLORE →</span>
+          </div>
         </div>
       </div>
 

@@ -720,17 +720,104 @@ body::after {
 }
 
 /* ==========================================
-   Instagram Instant Story Feature & Highlights Bar
+   Horizontal Swipe Carousel for 9 Rotation Cards
    ========================================== */
-.ig-stories-container {
-  background: rgba(15, 30, 52, 0.7);
+.rotations-swipe-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.rotations-swipe-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1.25rem 0.5rem 1.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-main) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rotation-swipe-card {
+  flex: 0 0 clamp(280px, 80vw, 360px);
+  scroll-snap-align: start;
+  position: relative;
+  background: linear-gradient(135deg, rgba(15, 35, 61, 0.8), rgba(10, 23, 40, 0.9));
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 215, 0, 0.25);
   border-radius: var(--radius-lg);
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rotation-swipe-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-bright);
+  box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+.rotation-card-footer {
+  margin-top: 1.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rotations-scroll-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(10, 23, 40, 0.85);
+  border: 1px solid var(--gold-bright);
+  color: var(--gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+  transition: all 0.25s ease;
+}
+
+.rotations-scroll-btn:hover {
+  background: var(--gold-bright);
+  color: #050b14;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.rotations-scroll-btn.prev {
+  left: -15px;
+}
+
+.rotations-scroll-btn.next {
+  right: -15px;
+}
+
+.rotations-swipe-hint {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--gold-bright);
+  margin-top: 0.5rem;
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .rotations-scroll-btn {
+    display: none;
+  }
 }
 
 .ig-stories-header {
