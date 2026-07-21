@@ -1769,64 +1769,80 @@ section[id] {
 
 @media (max-width: 480px) {
   html {
-    font-size: 12.5px !important;
+    font-size: 11.5px !important;
   }
 
   .container {
-    padding: 0 0.75rem !important;
+    padding: 0 0.5rem !important;
   }
 
   .brand-text h1 {
-    font-size: 0.88rem !important;
+    font-size: 0.82rem !important;
   }
 
   .brand-text span {
-    font-size: 0.6rem !important;
+    font-size: 0.58rem !important;
+  }
+
+  .hero-title {
+    font-size: 1.15rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .section-title {
+    font-size: 1.1rem !important;
   }
 
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.5rem !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.4rem !important;
   }
 
   .stat-card {
-    padding: 0.75rem 0.5rem !important;
+    padding: 0.6rem 0.4rem !important;
   }
 
   .stat-number {
-    font-size: 1.25rem !important;
+    font-size: 1.15rem !important;
   }
 
   .stat-label {
-    font-size: 0.68rem !important;
+    font-size: 0.65rem !important;
   }
 
   .hero-meta-row {
     flex-wrap: wrap !important;
     justify-content: center !important;
+    gap: 0.25rem !important;
+  }
+
+  .cover-stats-mini {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-around !important;
     gap: 0.35rem !important;
   }
 
   .marquee-section-wrapper {
-    padding: 1.25rem 0 !important;
-    margin: 1.25rem 0 !important;
+    padding: 1.0rem 0 !important;
+    margin: 1.0rem 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     overflow: hidden !important;
   }
 
   .marquee-word {
-    font-size: 1.15rem !important;
-    padding: 0 0.35rem !important;
+    font-size: 1.0rem !important;
+    padding: 0 0.25rem !important;
   }
 
   .marquee-divider {
-    font-size: 1.0rem !important;
+    font-size: 0.85rem !important;
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.4rem !important;
   }
 
   .filter-tags {
@@ -1834,12 +1850,17 @@ section[id] {
     padding-bottom: 0.4rem !important;
     -webkit-overflow-scrolling: touch !important;
     white-space: nowrap !important;
-    gap: 0.4rem !important;
+    gap: 0.3rem !important;
   }
 
   .filter-chip {
-    padding: 0.35rem 0.75rem !important;
-    font-size: 0.75rem !important;
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  .search-box {
+    width: 100% !important;
+    min-width: 0 !important;
   }
 }
 
