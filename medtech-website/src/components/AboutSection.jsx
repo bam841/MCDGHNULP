@@ -105,11 +105,11 @@ const labSectionsData = [
   { id: 2, name: 'Clinical Chemistry', icon: TestTube, desc: 'Quantitative spectrophotometric analysis of blood glucose, electrolytes, lipid profiles, and cardiac enzyme markers.' },
   { id: 3, name: 'Microbiology', icon: Dna, desc: 'Isolation, Gram staining, biochemical identification, and antimicrobial susceptibility testing of bacterial pathogens.' },
   { id: 4, name: 'Blood Bank / Immunohematology', icon: Syringe, desc: 'Blood donor screening, ABO/Rh typing, antibody identification, and emergency compatibility crossmatching.' },
-  { id: 5, name: 'Clinical Microscopy', icon: Eye, desc: 'Physical, chemical, and microscopic urinary sediment analysis, urine protein profiling, and body fluid examination.' },
-  { id: 6, name: 'Phlebotomy', icon: Bug, desc: 'Venipuncture, specimen collection techniques, tube sequencing, anti-coagulant handling, and patient care.' },
+  { id: 5, name: 'Clinical Microscopy', icon: Eye, desc: 'Routine urinalysis, physical and chemical reagent strip testing, microscopic urinary sediment examination, and renal function parameters.' },
+  { id: 6, name: 'Phlebotomy', icon: Droplet, desc: 'Patient preparation, venipuncture, capillary blood collection techniques, anti-coagulant tube sequencing, and proper specimen handling.' },
   { id: 7, name: 'Histopathology & Cytology', icon: Microscope, desc: 'Tissue processing, H&E paraffin section staining, frozen biopsy analysis, and Papanicolaou cytodiagnostics.' },
   { id: 8, name: 'Immunology & Serology', icon: ShieldCheck, desc: 'Serum antibody-antigen reaction testing, autoimmune disease screening, syphilis, and viral hepatitis assays.' },
-  { id: 9, name: 'Laboratory Management', icon: Binary, desc: 'Quality assurance systems, biosafety protocols, specimen archiving, inventory control, and laboratory operations.' }
+  { id: 9, name: 'Laboratory Management', icon: ShieldCheck, desc: 'Quality assurance systems, laboratory operations, biosafety protocols, inventory control, and administrative workflows.' }
 ];
 
 export default function AboutSection() {
