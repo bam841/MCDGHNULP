@@ -192,6 +192,7 @@ export default function AboutSection() {
   const stickyWrapperRef = useRef(null);
   const trackRef = useRef(null);
   const narrativeRef = useRef(null);
+  const rotationTrackRef = useRef(null);
   const [isNarrativeInView, setIsNarrativeInView] = useState(false);
 
   const [scrollProgress, setScrollProgress] = useState(0);
