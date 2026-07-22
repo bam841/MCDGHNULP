@@ -185,10 +185,6 @@ export default function AboutSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Instagram Instant Story Viewer Modal States
-  const [activeStoryIndex, setActiveStoryIndex] = useState(null);
-  const [storyLiked, setStoryLiked] = useState({});
-  
   const stickyWrapperRef = useRef(null);
   const trackRef = useRef(null);
   const narrativeRef = useRef(null);
@@ -197,15 +193,6 @@ export default function AboutSection() {
 
   const [scrollProgress, setScrollProgress] = useState(0);
   const [wrapperHeightPx, setWrapperHeightPx] = useState(null);
-
-  // Auto-advance Instagram Story Viewer
-  useEffect(() => {
-    if (activeStoryIndex === null) return;
-    const timer = setTimeout(() => {
-      setActiveStoryIndex((prev) => (prev + 1) % labSectionsData.length);
-    }, 5500);
-    return () => clearTimeout(timer);
-  }, [activeStoryIndex]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -271,28 +258,7 @@ export default function AboutSection() {
     }
   };
 
-  const openStoryModal = (index) => {
-    setActiveStoryIndex(index);
-  };
 
-  const closeStoryModal = () => {
-    setActiveStoryIndex(null);
-  };
-
-  const nextStory = (e) => {
-    e?.stopPropagation();
-    setActiveStoryIndex((prev) => (prev + 1) % labSectionsData.length);
-  };
-
-  const prevStory = (e) => {
-    e?.stopPropagation();
-    setActiveStoryIndex((prev) => (prev - 1 + labSectionsData.length) % labSectionsData.length);
-  };
-
-  const toggleLike = (e, id) => {
-    e?.stopPropagation();
-    setStoryLiked((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
 
   const handleMouseMove = (e) => {
     const card = e.currentTarget;
@@ -519,87 +485,6 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* FULLSCREEN INSTAGRAM INSTANT STORY VIEWER MODAL */}
-      {activeStoryIndex !== null && (
-        <div className="ig-story-modal-overlay" onClick={closeStoryModal}>
-          <div className="ig-story-modal-content" onClick={(e) => e.stopPropagation()}>
-            {/* Top Segmented Progress Bars */}
-            <div className="ig-story-progress-bar-row">
-              {labSectionsData.map((sec, idx) => (
-                <div key={sec.id} className="ig-story-progress-segment">
-                  <div 
-                    className={`ig-story-progress-fill ${
-                      idx < activeStoryIndex ? 'completed' : idx === activeStoryIndex ? 'active' : ''
-                    }`}
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Instagram Story Header */}
-            <div className="ig-story-header">
-              <div className="ig-story-user-info">
-                <div className="ig-story-avatar-small">
-                  <Microscope size={18} color="#ffd700" />
-                </div>
-                <div className="ig-story-user-text">
-                  <span className="ig-story-username">nulipa.alpha_interns</span>
-                  <span className="ig-story-location">Mount Carmel Hospital / SECTION 0{labSectionsData[activeStoryIndex].id}/09</span>
-                </div>
-              </div>
-              <button className="ig-story-close-btn" onClick={closeStoryModal} aria-label="Close Story">
-                <X size={22} />
-              </button>
-            </div>
-
-            {/* Story Image Canvas & Touch Controls */}
-            <div className="ig-story-media-box">
-              <img 
-                src={labSectionsData[activeStoryIndex].image} 
-                alt={labSectionsData[activeStoryIndex].name}
-                className="ig-story-image"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "/cover_landing_page.jpeg";
-                }}
-              />
-
-              {/* Touch Side Navigators */}
-              <div className="ig-story-touch-left" onClick={prevStory} title="Previous Story"></div>
-              <div className="ig-story-touch-right" onClick={nextStory} title="Next Story"></div>
-
-              {/* Story Overlay Caption */}
-              <div className="ig-story-caption-overlay">
-                <span className="ig-story-dept-badge">
-                  ROTATION 0{labSectionsData[activeStoryIndex].id} / 09 / {labSectionsData[activeStoryIndex].name.toUpperCase()}
-                </span>
-                <h3 className="ig-story-dept-name">{labSectionsData[activeStoryIndex].name}</h3>
-                <p className="ig-story-desc">{labSectionsData[activeStoryIndex].desc}</p>
-                <blockquote className="ig-story-quote">{labSectionsData[activeStoryIndex].quote}</blockquote>
-              </div>
-            </div>
-
-            {/* Story Footer Actions */}
-            <div className="ig-story-footer">
-              <button 
-                className={`ig-story-like-btn ${storyLiked[labSectionsData[activeStoryIndex].id] ? 'liked' : ''}`}
-                onClick={(e) => toggleLike(e, labSectionsData[activeStoryIndex].id)}
-              >
-                <Heart 
-                  size={20} 
-                  fill={storyLiked[labSectionsData[activeStoryIndex].id] ? "#ef4444" : "none"} 
-                  color={storyLiked[labSectionsData[activeStoryIndex].id] ? "#ef4444" : "#ffffff"} 
-                />
-                <span>{storyLiked[labSectionsData[activeStoryIndex].id] ? 'Liked!' : 'Send Reaction'}</span>
-              </button>
-
-              <span className="ig-story-hospital-tag">
-                <Building2 size={13} /> Mount Carmel Diocesan General Hospital
-              </span>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
