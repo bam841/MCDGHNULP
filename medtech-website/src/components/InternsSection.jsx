@@ -11,7 +11,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Pioneering diagnostic precision and compassionate patient care."',
-    image: '/assets/interns/sebastien_aczon.jpg',
+    image: 'Aczon.jpg',
     facebook: 'https://www.facebook.com/share/194zDyMkeu/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/itschennotchan_?igsh=NDFqbGR2aXJxdnFu'
   },
@@ -24,7 +24,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Accuracy and dedication in every laboratory analysis."',
-    image: '/assets/interns/kurt_binayug.jpg',
+    image: 'Binayug, Kurt Mattieu B..jpeg',
     facebook: 'https://www.facebook.com/share/1DEEooyVRh/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/_mattieuuu?igsh=MWNweDdmaG1ieWE3Zg=='
   },
@@ -37,7 +37,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Behind every sample is a patient relying on accurate diagnostic results."',
-    image: '/assets/interns/francine_cober.jpg',
+    image: 'Cober, Francine S..jpg',
     facebook: 'https://www.facebook.com/share/1EDVqeDh8M/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/seaur__chin?igsh=MWo4dDR0dzNhd2N3aQ=='
   },
@@ -222,7 +222,7 @@ export default function InternsSection() {
               <div className="intern-card-body">
                 <h3 className="intern-name">{intern.name}</h3>
                 <div className="intern-hospital">
-                  <Building2 size={15} /> {intern.hospitalName}
+                  {intern.hospitalName}
                 </div>
                 <span className="intern-spec">{intern.specialty}</span>
                 <p className="intern-quote">{intern.quote}</p>

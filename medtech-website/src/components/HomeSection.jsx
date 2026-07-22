@@ -95,14 +95,14 @@ export default function HomeSection({ scrollToSection }) {
             }}
           />
           <div className="cover-badge-tag">
-            <ImageIcon size={14} /> COVER ARCHIVE / BATCH NU-LIPA ALPHA
+            COVER ARCHIVE / BATCH NU-LIPA ALPHA
           </div>
         </div>
 
         <div className="cover-info-bar">
           <div className="cover-title-box">
             <h3>
-              <Award size={20} color="#ffd700" /> BATCH NU-LIPA ALPHA
+              BATCH NU-LIPA ALPHA
             </h3>
             <p>National University Lipa — College of Medical Technology</p>
           </div>

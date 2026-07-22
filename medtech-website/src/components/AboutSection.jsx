@@ -299,9 +299,6 @@ export default function AboutSection() {
           <div className="roaming-spotlight-beam" aria-hidden="true"></div>
           <div className="narrative-card-glow" aria-hidden="true"></div>
           <div className="narrative-header-row">
-            <div className="narrative-icon-badge">
-              <Building2 size={22} className="pulse-story-icon" />
-            </div>
             <span className="narrative-badge-tag">PIONEERING INTERNSHIP CLASS</span>
           </div>
           <p className="narrative-paragraph">
@@ -318,9 +315,6 @@ export default function AboutSection() {
           <div className="roaming-spotlight-beam" aria-hidden="true"></div>
           <div className="narrative-card-glow" aria-hidden="true"></div>
           <div className="narrative-header-row">
-            <div className="narrative-icon-badge cyan-badge">
-              <Users size={22} className="pulse-story-icon" />
-            </div>
             <span className="narrative-badge-tag cyan-tag">10 DEDICATED CLINICAL INTERNS</span>
           </div>
           
@@ -353,9 +347,6 @@ export default function AboutSection() {
           <div className="roaming-spotlight-beam" aria-hidden="true"></div>
           <div className="narrative-card-glow" aria-hidden="true"></div>
           <div className="narrative-header-row">
-            <div className="narrative-icon-badge amber-badge">
-              <Compass size={22} className="pulse-story-icon" />
-            </div>
             <span className="narrative-badge-tag amber-tag">PAVING THE WAY</span>
           </div>
           <p className="narrative-paragraph">
@@ -450,22 +441,18 @@ export default function AboutSection() {
 
           <div className="rotations-swipe-track" ref={rotationTrackRef}>
             {labSectionsData.map((sec) => {
-              const IconComp = sec.icon;
               return (
                 <div className="rotation-swipe-card" key={sec.id}>
                   <div className="rotation-card-glow" aria-hidden="true"></div>
                   <div className="rotation-card-header">
                     <span className="rotation-badge">SECTION 0{sec.id} / 09</span>
-                    <div className="rotation-icon-wrapper">
-                      <IconComp size={24} className="rotation-icon" />
-                    </div>
                   </div>
                   <h3 className="rotation-title">{sec.name}</h3>
                   <p className="rotation-desc">{sec.desc}</p>
 
                   <div className="rotation-card-footer">
                     <span className="rotation-hospital-tag">
-                      <Building2 size={13} /> Mount Carmel Diocesan General Hospital
+                      Mount Carmel Diocesan General Hospital
                     </span>
                   </div>
                 </div>
