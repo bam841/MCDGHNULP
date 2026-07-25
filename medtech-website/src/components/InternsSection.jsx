@@ -11,7 +11,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Pioneering diagnostic precision and compassionate patient care."',
-    image: 'Aczon.jpg',
+    image: '/Aczon.jpg',
     facebook: 'https://www.facebook.com/share/194zDyMkeu/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/itschennotchan_?igsh=NDFqbGR2aXJxdnFu'
   },
@@ -24,7 +24,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Accuracy and dedication in every laboratory analysis."',
-    image: 'Binayug, Kurt Mattieu B..jpeg',
+    image: '/Binayug, Kurt Mattieu B..jpeg',
     facebook: 'https://www.facebook.com/share/1DEEooyVRh/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/_mattieuuu?igsh=MWNweDdmaG1ieWE3Zg=='
   },
@@ -37,8 +37,8 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Behind every sample is a patient relying on accurate diagnostic results."',
-    image: 'Cober, Francine S..jpg',
-    facebook: 'https://www.facebook.com/share/1EDVqeDh8M/?mibextid=wwXIfr',
+    image: '/Cober, Francine S..jpg',
+    facebook: 'https://www.facebook.com/share/1EDVqeDh8M/?m\ibextid=wwXIfr',
     instagram: 'https://www.instagram.com/seaur__chin?igsh=MWo4dDR0dzNhd2N3aQ=='
   },
   {
@@ -89,7 +89,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Serving patients through microscopic accuracy and teamwork."',
-    image: '/assets/interns/alejandro_pacano.jpg',
+    image: '/Ali.JPG',
     facebook: 'https://www.facebook.com/share/1ArvNXojLn/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/alixxnfr?igsh=eWQ1dTVoYzhqM3Fz'
   },
@@ -211,6 +211,7 @@ export default function InternsSection() {
                   src={intern.image} 
                   alt={intern.name} 
                   className="intern-img"
+                  style={{ objectPosition: intern.objectPosition }}
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = "/cover_landing_page.jpeg";
