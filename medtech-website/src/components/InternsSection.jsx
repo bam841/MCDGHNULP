@@ -76,7 +76,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Rigorous attention to detail in every diagnostic specimen run."',
-    image: '/assets/interns/nishamei_monsod.jpg',
+    image: 'nishamei hally.png',
     facebook: 'https://www.facebook.com/share/17uAHrbDD2/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/halmeiia?igsh=bW5wZHlwNmZqam0w'
   },
@@ -102,7 +102,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Excellence in diagnostic science and compassionate clinical care."',
-    image: '/assets/interns/jasmin_quilantang.jpg',
+    image: 'Quilantang.jpg',
     facebook: 'https://www.facebook.com/share/161rWirTop2/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/sushij4zz?igsh=Y2Z1NG9ieXA2a29z'
   },
@@ -115,7 +115,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Paving the way for clinical innovation and diagnostic mastery."',
-    image: '/assets/interns/alexis_umali.jpg',
+    image: 'Umali.jpg',
     facebook: 'https://www.facebook.com/share/1LDy2Y5yWu/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/ae_jie1?igsh=MTgzYWR3b3ZzbmR0OA=='
   },
@@ -128,7 +128,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Upholding ethical standards and diagnostic precision every shift."',
-    image: '/assets/interns/kurt_veslinos.jpg',
+    image: 'jurei.JPG',
     facebook: 'https://www.facebook.com/share/1JJ2EWZvm1/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/thekurtjrei?igsh=MWlmMXJ4ejN6MW94Mg=='
   }
