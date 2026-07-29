@@ -50,7 +50,7 @@ const internsData = [
     hospitalName: 'Mount Carmel Diocesan General Hospital',
     specialty: 'Clinical Laboratory Rotation',
     quote: '"Committed to excellence, integrity, and ethical clinical practice."',
-    image: '/assets/interns/franzine_concordia.jpg',
+    image: 'Concordia.jpg',
     facebook: 'https://www.facebook.com/share/198qvjX9fq/?mibextid=wwXIfr',
     instagram: 'https://www.instagram.com/lecaachin?igsh=ZTBkczRtNGdrcjBk'
   },
