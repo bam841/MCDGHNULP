@@ -208,15 +208,32 @@ export default function InternsSection() {
             <div 
               className="intern-card-wrapper" 
               key={`${intern.id}-${activeFilter}`} 
-              style={{ animationDelay: `${index * 80}ms` }}
+              style={{ 
+                animationDelay: `${index * 80}ms`,
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%'
+              }}
             >
-              <div className="intern-card">
-                <div className="intern-card-header">
+              <div 
+                className="intern-card"
+                style={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}
+              >
+                <div className="intern-card-header" style={{ aspectRatio: '1 / 1', overflow: 'hidden' }}>
                   <img 
                     src={intern.image} 
                     alt={intern.name} 
                     className="intern-img"
-                    style={{ objectPosition: intern.objectPosition }}
+                    style={{ 
+                      objectFit: 'cover',
+                      objectPosition: intern.objectPosition || 'top',
+                      height: '100%',
+                      width: '100%'
+                    }}
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = "/cover_landing_page.jpeg";
@@ -225,7 +242,7 @@ export default function InternsSection() {
                   <span className="intern-badge">{intern.badge}</span>
                 </div>
 
-                <div className="intern-card-body">
+                <div className="intern-card-body" style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                   <h3 className="intern-name">{intern.name}</h3>
                   <div className="intern-hospital">
                     {intern.hospitalName}

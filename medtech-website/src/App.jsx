@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import HomeSection from './components/HomeSection';
 import TextMarqueeSection from './components/TextMarqueeSection';
 import AboutSection from './components/AboutSection';
+import StaffSection from './components/StaffSection';
 import InternsSection from './components/InternsSection';
 import GallerySection from './components/GallerySection';
 import Footer from './components/Footer';
@@ -11,7 +12,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const sectionIds = ['home', 'about', 'interns', 'gallery'];
+    const sectionIds = ['home', 'about', 'staff', 'interns', 'gallery'];
     const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
 
     const observerOptions = {
@@ -58,6 +59,10 @@ export default function App() {
 
         <div id="about" className="container">
           <AboutSection />
+        </div>
+
+        <div id="staff" className="container">
+          <StaffSection />
         </div>
 
         <div id="interns" className="container">

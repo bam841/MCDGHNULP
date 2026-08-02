@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Microscope, Home, Info, Users, Images, Menu, X } from 'lucide-react';
+import { Microscope, Home, Info, Users, Images, Menu, X, Shield } from 'lucide-react';
 
 export default function Navbar({ activeSection, scrollToSection }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -59,6 +59,14 @@ export default function Navbar({ activeSection, scrollToSection }) {
           >
             <Info size={18} />
             About Us
+          </button>
+          
+          <button 
+            className={`nav-btn ${activeSection === 'staff' ? 'active' : ''}`}
+            onClick={() => handleNavClick('staff')}
+          >
+            <Shield size={18} />
+            Heads & Staff
           </button>
           
           <button 
