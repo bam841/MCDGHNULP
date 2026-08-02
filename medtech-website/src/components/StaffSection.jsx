@@ -113,6 +113,28 @@ const staffData = [
     bio: 'Manages pre-analytical blood collections, phlebotomy supplies, venipuncture technique standards, and patient safety assurance.',
     email: 'cperez@mcdgh.com.ph',
     objectPosition: 'top'
+  },
+  {
+    id: 11,
+    name: 'Martella Louise Remo, RMT',
+    roles: ['Histopathology Section Officer-in-Charge'],
+    groups: ['supervisors'],
+    badges: ['Histopathology OIC', 'RMT'],
+    image: '/assets/staff/MARTELLA LOUISE REMO, RMTHISTOPATHOLOGY, OIC.png',
+    bio: 'Supervises histopathology laboratory workflows, tissue processing, microtomy, routine slide staining, and cytopathology diagnostic preparation.',
+    email: 'mremo@mcdgh.com.ph',
+    objectPosition: 'top'
+  },
+  {
+    id: 12,
+    name: 'Bernice F. Mendoza, RMT',
+    roles: ['Blood Bank Section Officer-in-Charge'],
+    groups: ['supervisors'],
+    badges: ['Blood Bank OIC', 'RMT'],
+    image: '/assets/staff/BERNICE F. MENDOZA, RMT BLOOD BANK, OIC.png',
+    bio: 'Directs the blood bank section, managing blood donor screening, component preparation, crossmatching procedures, and transfusion safety protocols.',
+    email: 'bmendoza@mcdgh.com.ph',
+    objectPosition: 'top'
   }
 ];
 
@@ -175,7 +197,7 @@ export default function StaffSection() {
             className={`filter-chip ${activeGroup === 'all' ? 'active' : ''}`}
             onClick={() => setActiveGroup('all')}
           >
-            All 10 Staff
+            All {staffData.length} Staff
           </button>
           <button 
             className={`filter-chip ${activeGroup === 'leadership' ? 'active' : ''}`}
