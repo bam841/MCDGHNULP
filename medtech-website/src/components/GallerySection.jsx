@@ -2,21 +2,31 @@ import React, { useState, useEffect } from 'react';
 import { Images, ChevronLeft, ChevronRight, X, Maximize2, Grid, MoveHorizontal } from 'lucide-react';
 
 const galleryImages = [
-  { id: 1, title: 'Photo 1c — Clinical Duty Group', category: 'Clinical Duty', src: '/assets/gallery/1c.jpg', caption: 'MedTech Batch Alpha interns during laboratory clinical duty rotation (1c).' },
-  { id: 2, title: 'Photo 2c — Laboratory Practice', category: 'Laboratory', src: '/assets/gallery/2c.jpg', caption: 'Diagnostic microscopic specimen analysis and laboratory practice (2c).' },
-  { id: 4, title: 'Photo 4c — Serology & Blood Bank', category: 'Laboratory', src: '/assets/gallery/4c.jpg', caption: 'ABO/Rh blood typing and donor antibody screening (4c).' },
-  { id: 6, title: 'Photo 6c — Hospital Orientation', category: 'Batch Events', src: '/assets/gallery/6c.jpg', caption: 'Partner hospital clinical internship orientation day (6c).' },
-  { id: 7, title: 'Photo 7c — Microscopic Smear', category: 'Laboratory', src: '/assets/gallery/7c.jpg', caption: 'Oil-immersion blood film cellular morphology review (7c).' },
-  { id: 10, title: 'Photo 10c — Duty Milestone', category: 'Batch Events', src: '/assets/gallery/10c.jpg', caption: 'Senior interns celebrating clinical duty milestones (10c).' },
-  { id: 11, title: 'Photo 11c — Landing Showcase', category: 'Batch Events', src: '/assets/gallery/11c.jpg', caption: 'Official BATCH NU-LIPA ALPHA featured cover highlight (11c).' },
-  { id: 12, title: 'Photo 12c — Internship Orientation', category: 'Batch Events', src: '/assets/gallery/12c.jpg', caption: 'Official clinical internship orientation showcase (12c).' },
-  { id: 13, title: 'Photo 13c — President Portrait', category: 'Clinical Duty', src: '/assets/gallery/13c.jpg', caption: 'Class President in official clinical internship attire (13c).' },
-  { id: 15, title: 'Photo 15c — Secretary Portrait', category: 'Clinical Duty', src: '/assets/gallery/15c.jpg', caption: 'Secretary in medical laboratory rotation (15c).' },
-  { id: 16, title: 'Photo 16c — Assistant Secretary Portrait', category: 'Clinical Duty', src: '/assets/gallery/16c.jpg', caption: 'Assistant Secretary fulfilling clinical duty rotation (16c).' },
-  { id: 17, title: 'Photo 17c — Treasurer Portrait', category: 'Clinical Duty', src: '/assets/gallery/17c.jpg', caption: 'Treasurer in medical laboratory diagnostic setting (17c).' },
-  { id: 18, title: 'Photo 18c — Auditor Portrait', category: 'Clinical Duty', src: '/assets/gallery/18c.jpg', caption: 'Auditor in clinical laboratory duty rotation (18c).' },
-  { id: 19, title: 'Photo 19c — Main PIO Portrait', category: 'Batch Events', src: '/assets/gallery/19c.jpg', caption: 'Public Information Officer clinical batch update (19c).' },
-  { id: 20, title: 'Photo 20c — PIO 2 Portrait', category: 'Batch Events', src: '/assets/gallery/20c.jpg', caption: 'Media & communications intern team coordinator (20c).' }
+  { id: 1, title: 'Photo 1 — Batch Group Shot', category: 'Batch Events', src: '/assets/gallery/1.jpg', caption: 'Batch Alpha group photo capturing the full intern cohort together.' },
+  { id: 2, title: 'Photo 1c — Clinical Duty Group', category: 'Clinical Duty', src: '/assets/gallery/1c.jpg', caption: 'MedTech Batch Alpha interns during laboratory clinical duty rotation (1c).' },
+  { id: 3, title: 'Photo 2 — Clinical Rotation Highlights', category: 'Clinical Duty', src: '/assets/gallery/2.jpg', caption: 'Interns during hands-on clinical rotation at the partner hospital.' },
+  { id: 4, title: 'Photo 2c — Laboratory Practice', category: 'Laboratory', src: '/assets/gallery/2c.jpg', caption: 'Diagnostic microscopic specimen analysis and laboratory practice (2c).' },
+  { id: 5, title: 'Photo 3 — Lab Session Group', category: 'Laboratory', src: '/assets/gallery/3.jpg', caption: 'Batch Alpha lab session — practical diagnostics and teamwork.' },
+  { id: 6, title: 'Photo 4 — Duty Day Candid', category: 'Clinical Duty', src: '/assets/gallery/4.jpg', caption: 'Candid moment captured during a busy clinical duty day.' },
+  { id: 7, title: 'Photo 4c — Serology & Blood Bank', category: 'Laboratory', src: '/assets/gallery/4c.jpg', caption: 'ABO/Rh blood typing and donor antibody screening (4c).' },
+  { id: 8, title: 'Photo 5 — Batch Bonding', category: 'Batch Events', src: '/assets/gallery/5.jpg', caption: 'Off-duty batch bonding and camaraderie among interns.' },
+  { id: 9, title: 'Photo 6 — Hospital Visit', category: 'Clinical Duty', src: '/assets/gallery/6.jpg', caption: 'Interns on-site at the partner hospital for clinical exposure.' },
+  { id: 10, title: 'Photo 6c — Hospital Orientation', category: 'Batch Events', src: '/assets/gallery/6c.jpg', caption: 'Partner hospital clinical internship orientation day (6c).' },
+  { id: 11, title: 'Photo 7 — Laboratory Workbench', category: 'Laboratory', src: '/assets/gallery/7.jpg', caption: 'Interns at the laboratory workbench performing diagnostic procedures.' },
+  { id: 12, title: 'Photo 7c — Microscopic Smear', category: 'Laboratory', src: '/assets/gallery/7c.jpg', caption: 'Oil-immersion blood film cellular morphology review (7c).' },
+  { id: 13, title: 'Photo 8 — Batch Celebration', category: 'Batch Events', src: '/assets/gallery/8.jpg', caption: 'Batch Alpha celebration — marking milestones and achievements.' },
+  { id: 14, title: 'Photo 8c — Clinical Chemistry Portrait', category: 'Clinical Duty', src: '/assets/gallery/8c.jpg', caption: 'Intern in clinical chemistry section during duty rotation (8c).' },
+  { id: 15, title: 'Photo 10c — Duty Milestone', category: 'Batch Events', src: '/assets/gallery/10c.jpg', caption: 'Senior interns celebrating clinical duty milestones (10c).' },
+  { id: 16, title: 'Photo 11c — Landing Showcase', category: 'Batch Events', src: '/assets/gallery/11c.jpg', caption: 'Official BATCH NU-LIPA ALPHA featured cover highlight (11c).' },
+  { id: 17, title: 'Photo 12c — Internship Orientation', category: 'Batch Events', src: '/assets/gallery/12c.jpg', caption: 'Official clinical internship orientation showcase (12c).' },
+  { id: 18, title: 'Photo 13c — President Portrait', category: 'Clinical Duty', src: '/assets/gallery/13c.jpg', caption: 'Class President in official clinical internship attire (13c).' },
+  { id: 19, title: 'Photo 14c — Vice President Portrait', category: 'Clinical Duty', src: '/assets/gallery/14c.jpg', caption: 'Vice President in official clinical internship attire (14c).' },
+  { id: 20, title: 'Photo 15c — Secretary Portrait', category: 'Clinical Duty', src: '/assets/gallery/15c.jpg', caption: 'Secretary in medical laboratory rotation (15c).' },
+  { id: 21, title: 'Photo 16c — Assistant Secretary Portrait', category: 'Clinical Duty', src: '/assets/gallery/16c.jpg', caption: 'Assistant Secretary fulfilling clinical duty rotation (16c).' },
+  { id: 22, title: 'Photo 17c — Treasurer Portrait', category: 'Clinical Duty', src: '/assets/gallery/17c.jpg', caption: 'Treasurer in medical laboratory diagnostic setting (17c).' },
+  { id: 23, title: 'Photo 18c — Auditor Portrait', category: 'Clinical Duty', src: '/assets/gallery/18c.jpg', caption: 'Auditor in clinical laboratory duty rotation (18c).' },
+  { id: 24, title: 'Photo 19c — Main PIO Portrait', category: 'Batch Events', src: '/assets/gallery/19c.jpg', caption: 'Public Information Officer clinical batch update (19c).' },
+  { id: 25, title: 'Photo 20c — PIO 2 Portrait', category: 'Batch Events', src: '/assets/gallery/20c.jpg', caption: 'Media & communications intern team coordinator (20c).' }
 ];
 
 export default function GallerySection() {
