@@ -216,32 +216,40 @@ export default function GallerySection() {
         </div>
       )}
 
-      {/* THUMBNAIL STRIP GRID */}
+      {/* PHOTOBOOTH MEMORY WALL */}
       <div className="gallery-grid-title">
-        <h3><Grid size={18} /> All {filteredImages.length} Photo Cards</h3>
+        <h3><Images size={18} /> Our Photobooth Memories</h3>
+        <p className="photobooth-subtitle">tap a memory to relive the moment</p>
       </div>
 
-      <div className="gallery-grid">
+      <div className="photobooth-grid">
         {filteredImages.map((img, idx) => (
           <div 
             key={img.id} 
-            className={`gallery-grid-item ${idx === sliderIndex ? 'active-thumb' : ''}`}
+            className={`photobooth-card ${idx === sliderIndex ? 'active-card' : ''}`}
+            style={{ animationDelay: `${idx * 70}ms` }}
             onClick={() => {
               setSliderIndex(idx);
               setLightboxIndex(idx);
             }}
           >
-            <img 
-              src={img.src} 
-              alt={img.title}
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = "/cover_landing_page.jpeg";
-              }} 
-            />
-            <div className="grid-item-overlay">
-              <span className="grid-item-category">{img.title}</span>
-              <Maximize2 size={18} color="#ffd700" />
+            <div className="polaroid-tape"></div>
+            <div className="polaroid-photo">
+              <img 
+                src={img.src} 
+                alt={img.title}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/cover_landing_page.jpeg";
+                }} 
+              />
+              <div className="photo-vignette"></div>
+              <div className="photo-grain"></div>
+              <div className="photo-shine"></div>
+            </div>
+            <div className="polaroid-caption">
+              <span className="caption-text">{img.title}</span>
+              <span className="caption-category">{img.category}</span>
             </div>
           </div>
         ))}
