@@ -3116,7 +3116,8 @@ section[id] {
   }
 
   .intern-card-header {
-    height: 180px !important;
+    aspect-ratio: 3 / 4 !important;
+    height: auto !important;
   }
 
   .intern-name {
@@ -3359,7 +3360,7 @@ section[id] {
   }
 
   .intern-card-header {
-    aspect-ratio: 4 / 3 !important;
+    aspect-ratio: 3 / 4 !important;
     height: auto !important;
   }
 

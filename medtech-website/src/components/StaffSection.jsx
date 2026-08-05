@@ -290,14 +290,14 @@ export default function StaffSection() {
                   )}
 
                   {/* Card Image Container */}
-                  <div className="intern-card-header" style={{ aspectRatio: '1 / 1', overflow: 'hidden' }}>
+                  <div className="intern-card-header" style={{ aspectRatio: '3 / 4', overflow: 'hidden' }}>
                     <img 
                       src={staff.image} 
                       alt={staff.name} 
                       className="intern-img"
                       style={{ 
                         objectFit: 'cover',
-                        objectPosition: staff.objectPosition || 'top',
+                        objectPosition: 'center 15%',
                         height: '100%',
                         width: '100%'
                       }}
