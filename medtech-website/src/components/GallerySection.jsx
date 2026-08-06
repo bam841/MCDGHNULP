@@ -15,7 +15,7 @@ const galleryImages = [
   { id: 10, title: 'Photo 6c — Hospital Orientation', category: 'Batch Events', src: '/assets/gallery/6c.jpg', caption: 'Partner hospital clinical internship orientation day (6c).', orientation: 'landscape' },
   { id: 11, title: 'Photo 7 — Laboratory Workbench', category: 'Laboratory', src: '/assets/gallery/7.jpg', caption: 'Interns at the laboratory workbench performing diagnostic procedures.', orientation: 'portrait' },
   { id: 12, title: 'Photo 7c — Microscopic Smear', category: 'Laboratory', src: '/assets/gallery/7c.jpg', caption: 'Oil-immersion blood film cellular morphology review (7c).', orientation: 'landscape' },
-  { id: 13, title: 'Photo 8 — Batch Celebration', category: 'Batch Events', src: '/assets/gallery/8.jpg', caption: 'Batch Alpha celebration — marking milestones and achievements.', orientation: 'portrait' },
+
   { id: 14, title: 'Photo 8c — Clinical Chemistry Portrait', category: 'Clinical Duty', src: '/assets/gallery/8c.jpg', caption: 'Intern in clinical chemistry section during duty rotation (8c).', orientation: 'portrait' },
   { id: 15, title: 'Photo 10c — Duty Milestone', category: 'Batch Events', src: '/assets/gallery/10c.jpg', caption: 'Senior interns celebrating clinical duty milestones (10c).', orientation: 'landscape' },
   { id: 16, title: 'Photo 11c — Landing Showcase', category: 'Batch Events', src: '/assets/gallery/11c.jpg', caption: 'Official BATCH NU-LIPA ALPHA featured cover highlight (11c).', orientation: 'portrait' },
@@ -348,8 +348,7 @@ export default function GallerySection() {
               <div className="photo-shine"></div>
             </div>
             <div className="polaroid-caption">
-              <span className="caption-text">{img.title}</span>
-              <span className="caption-category">{img.category}</span>
+              <span className="caption-text">BATCH ALPHA MOMENTS</span>
             </div>
           </div>
         ))}
