@@ -2703,6 +2703,95 @@ body::after {
   margin-top: 0.15rem;
 }
 
+/* ─── Landscape Polaroid Cards ─── */
+.photobooth-card.landscape-card {
+  grid-column: span 2;
+}
+
+.polaroid-photo.landscape-photo {
+  aspect-ratio: 5 / 3;
+}
+
+.polaroid-photo.square-photo {
+  aspect-ratio: 1 / 1;
+}
+
+/* ─── Memories Title Row with Party Poppers ─── */
+.memories-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.popper-icon {
+  color: var(--gold-main);
+  opacity: 0.4;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.popper-icon.left {
+  transform: rotate(-15deg) scale(0.9);
+}
+
+.popper-icon.right {
+  transform: rotate(15deg) scale(0.9) scaleX(-1);
+}
+
+.popper-icon.pop {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+.popper-icon.left.pop {
+  animation: popperBounceLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.popper-icon.right.pop {
+  animation: popperBounceRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes popperBounceLeft {
+  0%   { transform: rotate(-15deg) scale(0.9); opacity: 0.4; }
+  30%  { transform: rotate(-35deg) scale(1.35); opacity: 1; }
+  50%  { transform: rotate(-20deg) scale(1.1); }
+  70%  { transform: rotate(-30deg) scale(1.25); }
+  100% { transform: rotate(-25deg) scale(1.15); opacity: 1; }
+}
+
+@keyframes popperBounceRight {
+  0%   { transform: rotate(15deg) scale(0.9) scaleX(-1); opacity: 0.4; }
+  30%  { transform: rotate(35deg) scale(1.35) scaleX(-1); opacity: 1; }
+  50%  { transform: rotate(20deg) scale(1.1) scaleX(-1); }
+  70%  { transform: rotate(30deg) scale(1.25) scaleX(-1); }
+  100% { transform: rotate(25deg) scale(1.15) scaleX(-1); opacity: 1; }
+}
+
+/* ─── Confetti Container & Animation ─── */
+.confetti-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 50;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(85vh) translateX(var(--drift)) rotate(var(--rotation));
+    opacity: 0;
+  }
+}
+
+
 /* Lightbox Modal */
 .lightbox-backdrop {
   position: fixed;
@@ -3443,6 +3532,15 @@ section[id] {
   .search-box {
     width: 100% !important;
     min-width: 0 !important;
+  }
+
+  /* Landscape cards span full width on mobile */
+  .photobooth-card.landscape-card {
+    grid-column: span 2 !important;
+  }
+
+  .popper-icon {
+    display: none;
   }
 }
 
